@@ -51,6 +51,48 @@
 \renewcommand{\headrulewidth}{0.4pt}
 %\renewcommand{\footrulewidth}{0.4pt}
 
+%\makeatletter
+%\newenvironment{breakablealgorithm}
+%{% \begin{breakablealgorithm}
+%	\begin{center}
+%		\refstepcounter{algorithm}% New algorithm
+%		\hrule height.8pt depth0pt \kern2pt% \@fs@pre for \@fs@ruled
+%		\renewcommand{\caption}[2][\relax]{% Make a new \caption
+%			{\raggedright\textbf{\ALG@name~\thealgorithm} ##2\par}%
+%			\ifx\relax##1\relax % #1 is \relax
+%			\addcontentsline{loa}{algorithm}{\protect\numberline{\thealgorithm}##2}%
+%			\else % #1 is not \relax
+%			\addcontentsline{loa}{algorithm}{\protect\numberline{\thealgorithm}##1}%
+%			\fi
+%			\kern2pt\hrule\kern2pt
+%		}
+%	}{% \end{breakablealgorithm}
+%		\kern2pt\hrule\relax% \@fs@post for \@fs@ruled
+%	\end{center}
+%}
+%\makeatother
+
+\makeatletter
+\newenvironment{breakablealgorithm}
+{% \begin{breakablealgorithm}
+	\begin{center}
+		\refstepcounter{algorithm}% New algorithm
+		\hrule height.8pt depth0pt \kern2pt% \@fs@pre for \@fs@ruled
+		\renewcommand{\caption}[2][\relax]{% Make a new \caption
+			{\raggedright\textbf{算法\thealgorithm} ##2\par}%
+			\ifx\relax##1\relax % #1 is \relax
+			\addcontentsline{loa}{algorithm}{\protect\numberline{\thealgorithm}##2}%
+			\else % #1 is not \relax
+			\addcontentsline{loa}{algorithm}{\protect\numberline{\thealgorithm}##1}%
+			\fi
+			\kern2pt\hrule\kern2pt
+		}
+	}{% \end{breakablealgorithm}
+		\kern2pt\hrule\relax% \@fs@post for \@fs@ruled
+	\end{center}
+}
+\makeatother
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 % 制作中文封面
@@ -232,90 +274,171 @@ IMU
 	
 	。。。
 	
+	\section{offline数据处理流程}
+	
+		本小节中，首先介绍offline算法的处理流程，并逐渐过渡到最终系统使用的online算法的处理流程。offline算法中，智能手机会收集声音文件并产生一个wav文件，通过MATLAB分析该wav文件，计算出TDOA。该offline算法处理流程是为了通过处理一段时间窗口内，设备没有发生大幅度状态变化(包括角度，位置等参数)的情况下，计算出静态声源相对于该位置的方向(Speaker Direction Finding (SDF))。在一段时间窗口内的处理流程如下图所示(\ref{fig:offline-flowchart}).
+		
+		\begin{figure}[H]
+			\centering
+			\caption{offline flowchart}
+			\includegraphics[scale = 0.5]{offline-flowchart.png} 
+			\label{fig:offline-flowchart}
+			%\vspace{0.8cm} % 用来调整和下方文字的间距
+		\end{figure}
 	
 	\section{数据采集}
-	本文利用具有双麦克风系统的智能手机(Samsung 5)作为传感器结点的进行声音信号的手机，在分析阶段，使用MATLAB科学工具对信号进行解析显示。(TODO声音信号)
+		本文利用具有双麦克风系统的智能手机(Samsung 5)作为传感器结点的进行声音信号的手机，在分析阶段，使用MATLAB科学工具对采集到的信号进行解析显示。我们利用另一台手机发出了一个频率在2000Hz-2700Hz变换的线性调频信号,如图\ref{fig:dual-microphone-data}所示，图中蓝色的标记为LY的数据以及红色的标记为RY的数据，分别代指两个麦克风采集的数据。图中的上一部分图中，横坐标代指数据采样点，纵坐标是对数据进行标准化后的结果，因此无量纲。但是在下部分图中，横坐标是标准化的频率,单位为$\pi * $radians/sample(频率标准化的相关概念不做赘述，可以参考\cite{Normalized_frequency})，纵坐标为能量谱，这里我们很容易看出两个麦克风的采集的数据的能量谱是非常接近的，换句话说，两个麦克风的采集能力非常接近。这里我们对原始数据取样其中发生部分连续的400个点。如图\ref{fig:dual-microphone-data1}所示，同样我们依然可以看出两个麦克风的采集能力是非常接近的，另一方面，即便我们暂时无法确定TDOA的值，但是我们可以清晰看出两路声音数据是差了几个样本点的，因此只要计算出相差的样本点数，根据采样率(44100Hz)我们就可以求解出TDOA的近似的结果。
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=\textwidth]{dual-microphone-data.png} 
+			\caption{双麦克风信号}
+			\label{fig:dual-microphone-data}
+			%\vspace{0.8cm} % 用来调整和下方文字的间距
+		\end{figure}
 	
-	。。。。
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=\textwidth]{dual-microphone-data1.png} 
+			\caption{双麦克风信号取样}
+			\label{fig:dual-microphone-data1}
+			%\vspace{0.8cm} % 用来调整和下方文字的间距
+		\end{figure}
+		
+		下表中\ref{table:parameters-of-S5}展示了采集声音信号的手机参数，实验中使用了SamSung S5手机作为实验设备，S5集成了两个同步的麦克风，分别位于手机的底部和顶部，而这个两个麦克风的声音采集能力完全相同。目前的智能手机最高采样率都可以达到44100Hz，每秒钟就可以获得44100个声音信号的样本值。
+		
+		\begin{table}[htbp]
+			\setlength{\belowcaptionskip}{7pt}
+			\caption{SamSung S5设备参数}
+			\centering
+			\begin{tabular}{ccc}
+				\hline 
+				参数 & 描述 \\
+				\hline
+				灵敏度 & -26dB\\
+				麦克风距离 & 12cm \\
+				采样频率 & 44100Hz\\
+				\hline
+			\end{tabular} 
+			\vspace{0.2cm}
+			\label{table:parameters-of-S5}
+		\end{table}
 	
-	下表中\ref{table:parameters-of-S5}展示了采集声音信号的手机参数，实验中使用了SamSung S5手机作为实验设备，S5集成了两个同步的麦克风，分别位于手机的底部和顶部，而这个两个麦克风的声音采集能力完全相同。目前的智能手机最高采样率都可以达到44100Hz，每秒钟就可以获得44100个声音信号的样本值。
+		本文利用内置双麦克风的S5手机进行实时采集声音信号，首先介绍offline处理的，对信号进行汇总处理和分析。在底层获取的声音信号实际是个一维数组，当然利用MATLAB进行读取，会转换成两个一维数组，分别代表两个麦克风的数据。在原始的底层存储中，一维数组的值即是采集的到数据。如图\ref{fig:sound-data}所示，实验中，我们采用16bit的stero的格式进行采集，因此根据图中的存储方式很容易分别获得两个麦克风的数据，并且两组数据是完全满足时钟同步的。为了环境噪声或者其他声音的干扰，本文中设置了一个基于能量的硬阈值，当每个buffer信号的能量低于该阈值时，则认为没有声源发生，当平均能量高于该阈值时，认为有声源发生，从而进行后面的处理。
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.6]{sound-data.png} 
+			\caption{数据存储方式}
+			\label{fig:sound-data}
+			%\vspace{0.8cm} % 用来调整和下方文字的间距
+		\end{figure}
+		
+		数据采集阶段核心代码如果\ref{alg:data-collecting}所示.手机调用麦克风不断检测周围环境的声音信号，当信号端的平均能量高于阈值时，系统判断声源发声，并且将两路的声音信号进行分离，用于后续的处理。
+		
+		\begin{breakablealgorithm}
+			\caption{dual-microphone signals acquisition(双麦克风信号采集)}
+			\label{alg:data-collecting}
+			\begin{algorithmic}[1]
+				\STATE {mAudioRecord.startRecording()}
+				\STATE {//系统检测周围环境中的声音信号} 
+				\WHILE{isRecording}
+					\STATE {//读取两路声音信号} 
+					\STATE {read = mAudioRecord.read(mBuffer, 0, BUFFER\_SIZE)}
+					\IF {read <= 0}
+						\STATE {return false}
+					\ELSE
+						\STATE {//根据设定的阈值判断是否有声源发声}
+						\STATE { sum = 0}
+						\FOR{$i=0$ to read} 
+							\STATE {sum += Math.abs(mBbuffer[i])}
+						\ENDFOR 
+						\STATE {//达到设定的阈值，认为有声源发声}
+						\IF{sum / read > thresholdValue}
+							\STATE {//两路信号分离}
+							\STATE {index = 0}
+							\FOR{$i=0$ to mBuffer.length/2}
+								\IF{i \% 2 == 0}
+									\STATE{System.arraycopy(mBuffer, i * 2, mBuffer1, 0, 2)}
+									\STATE{LY[index] = ((mBuffer1[0]\&0x000000FF) | (((int)mBuffer1[1])<<8))/ 32768.0}
+									\STATE{LYList.add(LY[index])]}
+									\STATE{index = i / 2}
+								\ELSE
+									\STATE{System.arraycopy(mBuffer, i * 2, mBuffer2, 0, 2)}
+									\STATE{RY[index] = ((mBuffer2[0]\&0x000000FF) | (((int)mBuffer2[1])<<8))/ 32768.0}
+									\STATE{RYList.add(RY[index])]}
+								\ENDIF
+							\ENDFOR
+						\ENDIF	
+						\STATE {//other code for further data-processing}			
+					\ENDIF
+				\ENDWHILE
+			\end{algorithmic}
+		\end{breakablealgorithm}
 	
-	\begin{table}[htbp]
-		\setlength{\belowcaptionskip}{7pt}
-		\caption{SamSung S5设备参数}
-		\centering
-		\begin{tabular}{ccc}
-			\hline 
-			参数 & 描述 \\
-			\hline
-			灵敏度 & -26dB\\
-			麦克风距离 & 12cm \\
-			采样频率 & 44100Hz\\
-			\hline
-		\end{tabular} 
-		\vspace{0.2cm}
-		\label{table:parameters-of-S5}
-	\end{table}
+	\section{声音信号处理}
+	
+		从底层获得的两路原始信号包括了真实声源信号，环境噪声以及其他各种异常点，本小节将会利用滤波器降低环境噪声的影响，同时使用加窗移动的方式去除采集中的异常值，对原始的信号进行清洗处理。
 
-	本文利用内置双麦克风的S5手机进行实时采集声音信号，首先介绍offline处理的，对信号进行汇总处理和分析。在底层获取的声音信号实际是个一维数组，当然利用MATLAB进行读取，会转换成两个一维数组，分别代表两个麦克风的数据。在原始的底层存储中，一维数组的值即是采集的到数据。如图\ref{fig:sound-data}所示，实验中，我们采用16bit的stero的格式进行采集，因此根据图中的存储方式很容易分别获得两个麦克风的数据，并且两组数据是完全满足时钟同步的。为了环境噪声或者其他声音的干扰，本文中设置了一个基于能量的硬阈值，当每个buffer信号的能量低于该阈值时，则认为没有声源发生，当平均能量高于该阈值时，认为有声源发生，从而进行后面的处理。
-	
-	\begin{figure}[htbp]
-		\centering
-		\includegraphics[scale=0.6]{sound-data.png} 
-		\caption{数据存储方式}
-		\label{fig:sound-data}
-		%\vspace{0.8cm} % 用来调整和下方文字的间距
-	\end{figure}
-	
-	数据采集阶段核心代码如下所示.手机条用麦克风不断检测周围环境的声音信号，当信号端的平均能量高于阈值时，系统判断声源发声，并且将两路的声音信号进行分离，用于后续的处理。
-	
-	\begin{algorithm}
-		\caption{dual-microphone signals acquisition(双麦克风信号采集)}
-		\label{alg:data-collecting}
-		\begin{algorithmic}[1]
-			\STATE {mAudioRecord.startRecording()}
-			\STATE {//系统检测周围环境中的声音信号} 
-			\WHILE{isRecording}
-				\STATE {//读取两路声音信号} 
-				\STATE {read = mAudioRecord.read(mBuffer, 0, BUFFER\_SIZE)}
-				\IF {read <= 0}
-					\STATE {return false}
-				\ELSE
-					\STATE {//根据设定的阈值判断是否有声源发声}
-					\STATE { sum = 0}
-					\FOR{$i=0$ to read} 
-						\STATE {sum += Math.abs(mBbuffer[i])}
-					\ENDFOR 
-					\STATE {//达到设定的阈值，认为有声源发声}
-					\IF{sum / read > thresholdValue}
-						\STATE {//两路信号分离}
-						\STATE {index = 0}
-						\FOR{$i=0$ to mBuffer.length/2}
-							\IF{i \% 2 == 0}
-								\STATE{System.arraycopy(mBuffer, i * 2, mBuffer1, 0, 2)}
-								\STATE{LY[index] = ((mBuffer1[0]\&0x000000FF) | (((int)mBuffer1[1])<<8))/ 32768.0}
-								\STATE{LYList.add(LY[index])]}
-								\STATE{index = i / 2}
-							\ELSE
-								\STATE{System.arraycopy(mBuffer, i * 2, mBuffer2, 0, 2)}
-								\STATE{RY[index] = ((mBuffer2[0]\&0x000000FF) | (((int)mBuffer2[1])<<8))/ 32768.0}
-								\STATE{RYList.add(RY[index])]}
-							\ENDIF
-						\ENDFOR
-					\ENDIF					
-				\ENDIF
-			\ENDWHILE
-		\end{algorithmic}
-	\end{algorithm}
-	
-	
-	\section{offline算法及声音信号处理}
 		\subsection{信号除噪}
+		
+			常见的去噪方式就是使用滤波器，这里我们使用带通滤波器，降低环境噪声的干扰。在MATLAB通过filter,designfilter函数我们很容易实现我们需要的功能，在后续的online算法处理流程中，因为程序运行在Java平台上，所以Android方面使用dsp-collection这一个jar包即可满足我们需要的功能。
+			
+			例如当我们的声源频率范围在2000Hz-2700Hz时，那么在除噪的过程中，我们就需要通过一个带通滤波器，减益非该频率范围的成分。如图(\ref{fig:filter-data})所示，横纵坐标信息同图(\ref{fig:dual-microphone-data})通过滤波，不在制定频率范围的数据被大大减益，从而降低了对实验结果的影响。
+			
+			\begin{figure}[ht!]
+				\centering
+				\begin{subfigure}{.45\textwidth}
+					\centering
+					\includegraphics[width=0.9\textwidth]{data-unfiltered.png}
+					\caption{信号除噪之前}
+				\end{subfigure}
+				\begin{subfigure}{.45\textwidth}
+					\centering
+					\includegraphics[width=0.9\textwidth]{data-filtered.png}
+					\caption{信号除噪以后}
+					\label{fig:lstm2}
+				\end{subfigure}
+				\caption{(a)数据除噪之前。(b)数据除噪以后。}
+				\label{fig: filter-data}
+			\end{figure}
+					
 		\subsection{异常点移除}
-		\subsection{}
+		
+			对实验结果影响较大的还有异常数据，例如在稳定的信号中仍会有一些突变的声音信号。为防止信号之间的干扰，这里采用分别对两路信号进行处理。值得一提的是，由于采样率高达44100Hz，所以处理过程中去掉一些数据并不会造成较大的影响。这里，我们采用滑动窗口的方式，使用加权平均移动(\text{WMA}\cite{Moving_average})的方式进行处理。加权平均移动认为:同一个窗口内的不同的数据对目标值都有着不相同的权重因子，因此目标值就可以看成窗口内数据和一个固定的权重函数的卷积。由于数据本身异常点并不是很多，并且使用传统的\text{WMA}就可以获得较好的效果，因此记$\text{signal}_t$为t时刻的数据，采用下面的公式更新t时刻的信号值:
+			
+			\begin{equation}
+			\begin{aligned}
+				\text{signal}_{t_{new}} = \text{WMA}_{t}&=\frac{n p_{t}+(n-1) p_{t-1}+\cdots+2 p_{(t-n+2)}+p_{(t-n+1)}}{n+(n-1)+\cdots+2+1}\\
+											  &=\frac{n \times \text { signal }_{t-1}+(n-1) \times \text {signal}_{t-1}+\cdots+1 \times \text {signal}_{t-n+1}}{n+(n-1)+\cdots+2+1}								 
+			\end{aligned}
+			\end{equation}
+			
+			经过上述处理后，数据变得更加光滑，并且从图\ref{fig:data-outliers-removed}中已经可以隐约可见TDOA的大致范围。这里，\text{LSD}为第一个麦克风降噪后是数据，\text{LSignaData}代表降噪后数据经过异常点去除操作后的数据。
+			
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=\textwidth]{data-outliers-removed.png} 
+				\caption{异常点移除后的数据}
+				\label{fig:data-outliers-removed}
+				%\vspace{0.8cm} % 用来调整和下方文字的间距
+			\end{figure}
+		
+		\subsection{有效声音提取}
+		
+		阈值中值判断，online算法中去除 
+		
+		TODO
+		
 		\subsection{TDOA计算}
-	\section{零速校准}
-	\section{offlinee到online的迁移}
+			
+			
+		
+		\subsection{TDOA处理}
+		
+	\section{offline定位方法}
+	
+	\section{offline到online的迁移}
 	
 \chapter{模型系统实现与实验分析}
 	\section{开发环境与平台}

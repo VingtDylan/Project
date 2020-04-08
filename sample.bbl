@@ -49,4 +49,18 @@
   \bibvolume{2003}\bibnumber{(4)}\thinspace{}\textnormal{:
   }\bibpages{338\thinspace{}\textnormal{--}\thinspace{}447}\@.
 
+\bibitem{Normalized_frequency}
+\bibauthor{{Wikipedia contributors}}\@. \bibtitle{Normalized
+  frequency}\bibmark{[EB/OL]}\@. \bibpublisher{Wikipedia, The Free
+  Encyclopedia}\@, \bibyear{2020} \bibmodifydate{(2017/7/16)}
+  \bibcitedate{[2020/5/20]}\@.
+  \newline\url{https://en.wikipedia.org/wiki/Normalized_frequency_(unit)}\@.
+
+\bibitem{Moving_average}
+\bibauthor{{Wikipedia contributors}}\@. \bibtitle{Moving
+  averagey}\bibmark{[EB/OL]}\@. \bibpublisher{Wikipedia, The Free
+  Encyclopedia}\@, \bibyear{2020} \bibmodifydate{(2020/2/19)}
+  \bibcitedate{[2020/5/20]}\@.
+  \newline\url{https://en.wikipedia.org/wiki/Moving_averag}\@.
+
 \end{thebibliography}
