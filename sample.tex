@@ -234,23 +234,23 @@ IMU
 		
 		近些年来，基于声学传感器的定位系统越来越受到人们的关注，依赖于多个同步的麦克风，采集到的多路同步信号，用以后续的信号处理。随着无线传感网的不断发展进步，无线传感网定位问题也是一个比较热门的课题。而节点定位作为目标定位的前提条件，节点的定位精度也影响着目标定位的结果。然而，尽管目前有很多节点定位算法，但是因为功耗，成本等客观条件的限制，这些定位算法在很多场景中并不能很好的应用。
 		
-		随着可移动智能设备的普及，尤以智能手机更为常见。自2018年起，大部分的智能手机都开始集成两个甚至多个麦克风，除了底部的通话话筒以外，智能手机的顶部都还有一个“小孔”(不同的手机可能有所区别，例如iPhone手机的次麦克风可能位于主摄像头的附近)(如图\ref{fig:iphone-dual-microphone})，这就是手机的降噪麦克风，它的主要作用是实现有噪声环境下的高质量通话。
+		随着可移动智能设备的普及，尤以智能手机更为常见。自2018年起，大部分的智能手机都开始集成两个甚至多个麦克风，除了底部的通话话筒以外，智能手机的顶部都还有一个“小孔”(不同的手机可能有所区别，例如iPhone手机的次麦克风可能位于主摄像头的附近)(如图\ref{fig: iphone-dual-microphone})，这就是手机的降噪麦克风，它的主要作用是实现有噪声环境下的高质量通话。
 		
 		\begin{figure}[htbp]
 			\centering
 			\includegraphics[width=0.7\textwidth]{iPhone-dual-micphone.jpeg} 
 			\caption{iPhone8的次麦克风手机位于摄像头附近}
-			\label{fig:iphone-dual-microphone}
+			\label{fig: iphone-dual-microphone}
 			%\vspace{0.8cm} % 用来调整和下方文字的间距
 		\end{figure}
 	
-		手机上设有的两个电容式麦克风尽管作用不同，但是其性能相同，对声音信号的收集能力相同。利用双麦克风系统的时间同步(两个麦克风是集成于同一个设备的，因此完全时钟同步)特性，即使两个麦克风(如图\ref{fig:samsung-dual-microphone})之间的距离较短(16cm左右，不同手机略有差异)，也可以根据声音到达两个麦克风时刻的差异计算TDOA，因此，利用双麦克风系统手机结点作为实验设备有效解决了研究过程中时钟同步的问题。
+		手机上设有的两个电容式麦克风尽管作用不同，但是其性能相同，对声音信号的收集能力相同。利用双麦克风系统的时间同步(两个麦克风是集成于同一个设备的，因此完全时钟同步)特性，即使两个麦克风(如图\ref{fig: samsung-dual-microphone})之间的距离较短(16cm左右，不同手机略有差异)，也可以根据声音到达两个麦克风时刻的差异计算TDOA，因此，利用双麦克风系统手机结点作为实验设备有效解决了研究过程中时钟同步的问题。
 		
 		\begin{figure}[htbp]
 			\centering
 			\includegraphics[height=0.35\textheight,width=0.3\textwidth]{samsung-dual-microphone.png} 
 			\caption{Dual-microphone phone}
-			\label{fig:samsung-dual-microphone}
+			\label{fig: samsung-dual-microphone}
 			%\vspace{0.8cm} % 用来调整和下方文字的间距
 		\end{figure}
 	
@@ -276,24 +276,24 @@ IMU
 	
 	\section{offline数据处理流程}
 	
-		本小节中，首先介绍offline算法的处理流程，并逐渐过渡到最终系统使用的online算法的处理流程。offline算法中，智能手机会收集声音文件并产生一个wav文件，通过MATLAB分析该wav文件，计算出TDOA。该offline算法处理流程是为了通过处理一段时间窗口内，设备没有发生大幅度状态变化(包括角度，位置等参数)的情况下，计算出静态声源相对于该位置的方向(Speaker Direction Finding (SDF))。在一段时间窗口内的处理流程如下图所示(\ref{fig:offline-flowchart}).
+		本小节中，首先介绍offline算法的处理流程，并逐渐过渡到最终系统使用的online算法的处理流程。offline算法中，智能手机会收集声音文件并产生一个wav文件，通过MATLAB分析该wav文件，计算出TDOA。该offline算法处理流程是为了通过处理一段时间窗口内，设备没有发生大幅度状态变化(包括角度，位置等参数)的情况下，计算出静态声源相对于该位置的方向(Speaker Direction Finding (SDF))。在一段时间窗口内的处理流程如下图所示(\ref{fig: offline-flowchart}).
 		
 		\begin{figure}[H]
 			\centering
 			\caption{offline flowchart}
 			\includegraphics[scale = 0.5]{offline-flowchart.png} 
-			\label{fig:offline-flowchart}
+			\label{fig: offline-flowchart}
 			%\vspace{0.8cm} % 用来调整和下方文字的间距
 		\end{figure}
 	
 	\section{数据采集}
-		本文利用具有双麦克风系统的智能手机(Samsung 5)作为传感器结点的进行声音信号的手机，在分析阶段，使用MATLAB科学工具对采集到的信号进行解析显示。我们利用另一台手机发出了一个频率在2000Hz-2700Hz变换的线性调频信号,如图\ref{fig:dual-microphone-data}所示，图中蓝色的标记为LY的数据以及红色的标记为RY的数据，分别代指两个麦克风采集的数据。图中的上一部分图中，横坐标代指数据采样点，纵坐标是对数据进行标准化后的结果，因此无量纲。但是在下部分图中，横坐标是标准化的频率,单位为$\pi * $radians/sample(频率标准化的相关概念不做赘述，可以参考\cite{Normalized_frequency})，纵坐标为能量谱，这里我们很容易看出两个麦克风的采集的数据的能量谱是非常接近的，换句话说，两个麦克风的采集能力非常接近。这里我们对原始数据取样其中发生部分连续的400个点。如图\ref{fig:dual-microphone-data1}所示，同样我们依然可以看出两个麦克风的采集能力是非常接近的，另一方面，即便我们暂时无法确定TDOA的值，但是我们可以清晰看出两路声音数据是差了几个样本点的，因此只要计算出相差的样本点数，根据采样率(44100Hz)我们就可以求解出TDOA的近似的结果。
+		本文利用具有双麦克风系统的智能手机(Samsung 5)作为传感器结点的进行声音信号的手机，在分析阶段，使用MATLAB科学工具对采集到的信号进行解析显示。我们利用另一台手机发出了一个频率在2000Hz-2700Hz变换的线性调频信号,如图\ref{fig: dual-microphone-data}所示，图中蓝色的标记为LY的数据以及红色的标记为RY的数据，分别代指两个麦克风采集的数据。图中的上一部分图中，横坐标代指数据采样点，纵坐标是对数据进行标准化后的结果，因此无量纲。但是在下部分图中，横坐标是标准化的频率,单位为$\pi * $radians/sample(频率标准化的相关概念不做赘述，可以参考\cite{Normalized_frequency})，纵坐标为能量谱，这里我们很容易看出两个麦克风的采集的数据的能量谱是非常接近的，换句话说，两个麦克风的采集能力非常接近。这里我们对原始数据取样其中发生部分连续的400个点。如图\ref{fig: dual-microphone-data1}所示，同样我们依然可以看出两个麦克风的采集能力是非常接近的，另一方面，即便我们暂时无法确定TDOA的值，但是我们可以清晰看出两路声音数据是差了几个样本点的，因此只要计算出相差的样本点数，根据采样率(44100Hz)我们就可以求解出TDOA的近似的结果。
 		
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=\textwidth]{dual-microphone-data.png} 
 			\caption{双麦克风信号}
-			\label{fig:dual-microphone-data}
+			\label{fig: dual-microphone-data}
 			%\vspace{0.8cm} % 用来调整和下方文字的间距
 		\end{figure}
 	
@@ -301,11 +301,11 @@ IMU
 			\centering
 			\includegraphics[width=\textwidth]{dual-microphone-data1.png} 
 			\caption{双麦克风信号取样}
-			\label{fig:dual-microphone-data1}
+			\label{fig: dual-microphone-data1}
 			%\vspace{0.8cm} % 用来调整和下方文字的间距
 		\end{figure}
 		
-		下表中\ref{table:parameters-of-S5}展示了采集声音信号的手机参数，实验中使用了SamSung S5手机作为实验设备，S5集成了两个同步的麦克风，分别位于手机的底部和顶部，而这个两个麦克风的声音采集能力完全相同。目前的智能手机最高采样率都可以达到44100Hz，每秒钟就可以获得44100个声音信号的样本值。
+		下表中\ref{table: parameters-of-S5}展示了采集声音信号的手机参数，实验中使用了SamSung S5手机作为实验设备，S5集成了两个同步的麦克风，分别位于手机的底部和顶部，而这个两个麦克风的声音采集能力完全相同。目前的智能手机最高采样率都可以达到44100Hz，每秒钟就可以获得44100个声音信号的样本值。
 		
 		\begin{table}[htbp]
 			\setlength{\belowcaptionskip}{7pt}
@@ -321,24 +321,24 @@ IMU
 				\hline
 			\end{tabular} 
 			\vspace{0.2cm}
-			\label{table:parameters-of-S5}
+			\label{table: parameters-of-S5}
 		\end{table}
 	
-		本文利用内置双麦克风的S5手机进行实时采集声音信号，首先介绍offline处理的，对信号进行汇总处理和分析。在底层获取的声音信号实际是个一维数组，当然利用MATLAB进行读取，会转换成两个一维数组，分别代表两个麦克风的数据。在原始的底层存储中，一维数组的值即是采集的到数据。如图\ref{fig:sound-data}所示，实验中，我们采用16bit的stero的格式进行采集，因此根据图中的存储方式很容易分别获得两个麦克风的数据，并且两组数据是完全满足时钟同步的。为了环境噪声或者其他声音的干扰，本文中设置了一个基于能量的硬阈值，当每个buffer信号的能量低于该阈值时，则认为没有声源发生，当平均能量高于该阈值时，认为有声源发生，从而进行后面的处理。
+		本文利用内置双麦克风的S5手机进行实时采集声音信号，首先介绍offline处理的，对信号进行汇总处理和分析。在底层获取的声音信号实际是个一维数组，当然利用MATLAB进行读取，会转换成两个一维数组，分别代表两个麦克风的数据。在原始的底层存储中，一维数组的值即是采集的到数据。如图\ref{fig: sound-data}所示，实验中，我们采用16bit的stero的格式进行采集，因此根据图中的存储方式很容易分别获得两个麦克风的数据，并且两组数据是完全满足时钟同步的。为了环境噪声或者其他声音的干扰，本文中设置了一个基于能量的硬阈值，当每个buffer信号的能量低于该阈值时，则认为没有声源发生，当平均能量高于该阈值时，认为有声源发生，从而进行后面的处理。
 		
 		\begin{figure}[H]
 			\centering
 			\includegraphics[scale=0.6]{sound-data.png} 
 			\caption{数据存储方式}
-			\label{fig:sound-data}
+			\label{fig: sound-data}
 			%\vspace{0.8cm} % 用来调整和下方文字的间距
 		\end{figure}
 		
-		数据采集阶段核心代码如果\ref{alg:data-collecting}所示.手机调用麦克风不断检测周围环境的声音信号，当信号端的平均能量高于阈值时，系统判断声源发声，并且将两路的声音信号进行分离，用于后续的处理。
+		数据采集阶段核心代码如果\ref{alg: data-collecting}所示.手机调用麦克风不断检测周围环境的声音信号，当信号端的平均能量高于阈值时，系统判断声源发声，并且将两路的声音信号进行分离，用于后续的处理。
 		
 		\begin{breakablealgorithm}
 			\caption{dual-microphone signals acquisition(双麦克风信号采集)}
-			\label{alg:data-collecting}
+			\label{alg: data-collecting}
 			\begin{algorithmic}[1]
 				\STATE {mAudioRecord.startRecording()}
 				\STATE {//系统检测周围环境中的声音信号} 
@@ -384,7 +384,7 @@ IMU
 		
 			常见的去噪方式就是使用滤波器，这里我们使用带通滤波器，降低环境噪声的干扰。在MATLAB通过filter,designfilter函数我们很容易实现我们需要的功能，在后续的online算法处理流程中，因为程序运行在Java平台上，所以Android方面使用dsp-collection这一个jar包即可满足我们需要的功能。
 			
-			例如当我们的声源频率范围在2000Hz-2700Hz时，那么在除噪的过程中，我们就需要通过一个带通滤波器，减益非该频率范围的成分。如图(\ref{fig:filter-data})所示，横纵坐标信息同图(\ref{fig:dual-microphone-data})通过滤波，不在制定频率范围的数据被大大减益，从而降低了对实验结果的影响。
+			例如当我们的声源频率范围在2000Hz-2700Hz时，那么在除噪的过程中，我们就需要通过一个带通滤波器，减益非该频率范围的成分。如图(\ref{fig: filter-data})所示，横纵坐标信息同图(\ref{fig:dual-microphone-data})通过滤波，不在制定频率范围的数据被大大减益，从而降低了对实验结果的影响。
 			
 			\begin{figure}[ht!]
 				\centering
@@ -397,7 +397,6 @@ IMU
 					\centering
 					\includegraphics[width=0.9\textwidth]{data-filtered.png}
 					\caption{信号除噪以后}
-					\label{fig:lstm2}
 				\end{subfigure}
 				\caption{(a)数据除噪之前。(b)数据除噪以后。}
 				\label{fig: filter-data}
@@ -414,27 +413,66 @@ IMU
 			\end{aligned}
 			\end{equation}
 			
-			经过上述处理后，数据变得更加光滑，并且从图\ref{fig:data-outliers-removed}中已经可以隐约可见TDOA的大致范围。这里，\text{LSD}为第一个麦克风降噪后是数据，\text{LSignaData}代表降噪后数据经过异常点去除操作后的数据。
+			经过上述处理后，数据变得更加光滑，并且从图\ref{fig: data-outliers-removed}中已经可以隐约可见TDOA的大致范围。这里，\text{LSD}为第一个麦克风降噪后是数据，\text{LSignaData}代表降噪后数据经过异常点去除操作后的数据。
 			
 			\begin{figure}[H]
 				\centering
 				\includegraphics[width=\textwidth]{data-outliers-removed.png} 
 				\caption{异常点移除后的数据}
-				\label{fig:data-outliers-removed}
+				\label{fig: data-outliers-removed}
 				%\vspace{0.8cm} % 用来调整和下方文字的间距
 			\end{figure}
 		
 		\subsection{有效声音提取}
 		
-		阈值中值判断，online算法中去除 
+			阈值中值判断，online算法中去除 
 		
-		TODO
+			TODO
 		
 		\subsection{TDOA计算}
 			
+			本小节基于前期的信号处理获取到两路同步的声音信号，调用传统的GCC算法对两路同步信号进行TDOA计算(估计)。
 			
+			由于接收到的声音信号来自于同一个声源，因此两路信号之间具有较强的相关性而与噪声无关。广义互相关方法恰好可以得到两路信号之间的时延差。其基本思想是对两路信号$x_1(t)$和$x_2(t)$进行预滤波，然后再求互相关函数，其原理框架如图(\ref{fig: GCC})所示，公式表达为:
+			
+			\begin{equation}
+				\tau_{\text {delay }}=\underset{t \in \mathbb{R}}{\arg \max }((f \star g)(t))
+			\end{equation}
+			
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=\textwidth]{GCC.png} 
+				\caption{Priciple diagram of the generalized cross-correlation based time delay estimation}
+				\label{fig: GCC}
+				%\vspace{0.8cm} % 用来调整和下方文字的间距
+			\end{figure}	
+			
+			需要注意的是，这里计算出的“时延”实际是两个信号相差的采样点数，但是，由于采样率为设定好的44100Hz,因此计算出相差的采样点数，经过转换就可以得到对应的时延，也就是所求的TDOA，后面我们用相差的采样点数代指TDOA，转换公式无需赘述。可以明确的是，当TDOA < 0时，声音先到达第二个麦克风，TDOA > 0 时，声音先到达第一个麦克风，TDOA = 0 时，声音同时到达。降至二维空间下，详情如图(\ref{fig: tdoa})所示。
+			
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=\textwidth]{tdoa.png} 
+				\caption{{\text{TDOA > 0, TDOA < 0, TDOA = 0}}}
+				\label{fig: tdoa}
+				%\vspace{0.8cm} % 用来调整和下方文字的间距
+			\end{figure}
 		
 		\subsection{TDOA处理}
+		
+		利用智能手机作为传感器，计算指定声源到达同一个手机麦克风的TDOA，可以得到大量的数据并且计算出很多个数据段的TDOA。因此鉴于数据量多的优势，那么我们就可以利用此优势进行数据的筛选。即便我们的某些TDOA测量并不是足够“精确”，但是依然可以辅助进行方向探测。
+		
+		回到最初的系统设置，我们设置的采样率44100Hz，编码为16bit，我们暂时不考虑高编码编码的精确度，但显然的是，由于使用的bit数较大，因此数据量化的范围也更大，因此数据也是更精确的。对于44100Hz的采样率，麦克风每手机一秒钟，就可以采样到44100Hz的采样点。实验中发现，如果将太多量的数据一次性进行计算，由于我们没有加窗等操作，加上声源功率较小，信号衰减等，大部分测量结果都是不准确的。然而，另一方面，即便数据过多造成了结果不够准确，但是对数据分段，对该一秒钟的部分数据进行tdoa计算，在原理上也是对整段数据的tdoa的估计，因为延迟是“全局”的延迟，通过实验我们也发现这一个问题。因此，鉴于这种思想，我们可以将信号进行分段，当然，由于在后续实验中设备会一直处理数据，因此我们并不是对1s数据分段，而是每k个连续数据进行分段。从而，对两个麦克风相同次序的数据段进行TDOA，依然可以得到全局的TDOA，如图(\ref{fig: data-split})。
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=\textwidth]{data-split.png} 
+			\caption{{数据分段示意}}
+			\label{fig: data-split}
+			%\vspace{0.8cm} % 用来调整和下方文字的间距
+		\end{figure}
+		
+		数据分段之后，并进行对应的数据段的tdoa计算，从而可以产生一系列的tdoa值。在实际计算中，我们设定k = 2048，很明显的是，
+		
 		
 	\section{offline定位方法}
 	
