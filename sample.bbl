@@ -49,6 +49,11 @@
   \bibvolume{2003}\bibnumber{(4)}\thinspace{}\textnormal{:
   }\bibpages{338\thinspace{}\textnormal{--}\thinspace{}447}\@.
 
+\bibitem{Google_Sensor}
+\bibauthor{{Google Inc}}\@. \bibtitle{Android Developers Sensors
+  Overview}\bibmark{[EB/OL]}\@. \bibyear{2020} \bibcitedate{[2020/5/20]}\@.
+  \newline\url{https://developer.android.com/guide/topics/sensors/sensors_overview.html}\@.
+
 \bibitem{Normalized_frequency}
 \bibauthor{{Wikipedia contributors}}\@. \bibtitle{Normalized
   frequency}\bibmark{[EB/OL]}\@. \bibpublisher{Wikipedia, The Free

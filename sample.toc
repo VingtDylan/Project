@@ -2,51 +2,40 @@
 \contentsline {chapter}{\numberline {1}绪论}{1}{chapter.1}%
 \contentsline {section}{\numberline {1\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}研究背景及意义}{1}{section.1.1}%
 \contentsline {section}{\numberline {1\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}国内外研究现状}{1}{section.1.2}%
-\contentsline {subsection}{\numberline {1\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}室内定位方案}{1}{subsection.1.2.1}%
 \contentsline {section}{\numberline {1\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3}研究内容与本文主要工作}{1}{section.1.3}%
-\contentsline {section}{\numberline {1\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}4}论文的整体结构}{1}{section.1.4}%
+\contentsline {section}{\numberline {1\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}4}本文的整体结构}{1}{section.1.4}%
 \contentsline {chapter}{\numberline {2}声源定位相关研究工作}{3}{chapter.2}%
-\contentsline {section}{\numberline {2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}声源定位方案}{3}{section.2.1}%
-\contentsline {subsection}{\numberline {2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}声源定位技术的应用}{4}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}远程视频会议及远程教学等}{4}{subsection.2.1.2}%
-\contentsline {section}{\numberline {2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}室内定位的信道模型}{4}{section.2.2}%
-\contentsline {subsection}{\numberline {2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}基于RSS的信道模型}{4}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}基于TOA的信道模型}{4}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3}基于TDOA的信道模型}{4}{subsection.2.2.3}%
-\contentsline {subsection}{\numberline {2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}4}射线跟踪信道模型}{4}{subsection.2.2.4}%
-\contentsline {section}{\numberline {2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3}室内定位为技术原理}{4}{section.2.3}%
-\contentsline {subsection}{\numberline {2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}几何定位法}{4}{subsection.2.3.1}%
-\contentsline {subsubsection}{\numberline {2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}多边测距法}{4}{subsubsection.2.3.1.1}%
-\contentsline {subsubsection}{\numberline {2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}双曲线定位法}{4}{subsubsection.2.3.1.2}%
-\contentsline {subsubsection}{\numberline {2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3}三角定位法}{4}{subsubsection.2.3.1.3}%
-\contentsline {subsection}{\numberline {2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}场景分析法}{4}{subsection.2.3.2}%
-\contentsline {chapter}{\numberline {3}智能手机的感知和识别}{5}{chapter.3}%
+\contentsline {section}{\numberline {2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}声源定位技术介绍}{3}{section.2.1}%
+\contentsline {section}{\numberline {2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}声源定位方案}{3}{section.2.2}%
+\contentsline {chapter}{\numberline {3}智能手机感知与定位原理}{5}{chapter.3}%
 \contentsline {section}{\numberline {3\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}双麦克风的节点定位}{5}{section.3.1}%
 \contentsline {section}{\numberline {3\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}智能手机的传感器}{6}{section.3.2}%
-\contentsline {subsection}{\numberline {3\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}加速计传感器}{6}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}陀螺仪}{6}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3}重力传感器}{6}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}4}磁力计}{6}{subsection.3.2.4}%
-\contentsline {chapter}{\numberline {4}基于双麦克风手机的声源定位}{7}{chapter.4}%
-\contentsline {section}{\numberline {4\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}offline数据处理流程}{7}{section.4.1}%
-\contentsline {section}{\numberline {4\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}数据采集}{8}{section.4.2}%
-\contentsline {section}{\numberline {4\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3}声音信号处理}{12}{section.4.3}%
-\contentsline {subsection}{\numberline {4\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}信号除噪}{12}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}异常点移除}{12}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3}有效声音提取}{14}{subsection.4.3.3}%
-\contentsline {subsection}{\numberline {4\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}4}TDOA计算}{14}{subsection.4.3.4}%
-\contentsline {subsection}{\numberline {4\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}5}TDOA处理}{15}{subsection.4.3.5}%
-\contentsline {section}{\numberline {4\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}4}offline定位方法}{17}{section.4.4}%
-\contentsline {section}{\numberline {4\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}5}offline到online的迁移}{17}{section.4.5}%
-\contentsline {chapter}{\numberline {5}模型系统实现与实验分析}{19}{chapter.5}%
-\contentsline {section}{\numberline {5\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}开发环境与平台}{19}{section.5.1}%
-\contentsline {section}{\numberline {5\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}系统设计}{19}{section.5.2}%
-\contentsline {subsection}{\numberline {5\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}多模块设计}{19}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}界面与运行方式}{19}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3}实验与分析}{19}{section.5.3}%
-\contentsline {section}{\numberline {5\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}4}本章小结}{19}{section.5.4}%
-\contentsline {chapter}{\numberline {6}总结与展望}{21}{chapter.6}%
-\contentsline {section}{\numberline {6\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}工作总结}{21}{section.6.1}%
-\contentsline {section}{\numberline {6\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}前景展望}{21}{section.6.2}%
-\contentsline {chapter}{参考文献}{23}{chapter*.14}%
-\contentsline {chapter}{致\hspace {2em}谢}{25}{chapter*.15}%
+\contentsline {subsection}{\numberline {3\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}加速计传感器}{7}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}陀螺仪}{7}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3}重力传感器}{7}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}4}磁力计}{7}{subsection.3.2.4}%
+\contentsline {chapter}{\numberline {4}基于双麦克风手机的声源定位方案}{9}{chapter.4}%
+\contentsline {section}{\numberline {4\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}离线数据处理流程}{9}{section.4.1}%
+\contentsline {section}{\numberline {4\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}数据采集}{10}{section.4.2}%
+\contentsline {section}{\numberline {4\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3}声音信号处理}{14}{section.4.3}%
+\contentsline {subsection}{\numberline {4\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}信号除噪}{14}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}异常点移除}{14}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3}有效声音提取}{16}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}4}TDOA计算}{16}{subsection.4.3.4}%
+\contentsline {subsection}{\numberline {4\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}5}TDOA处理}{17}{subsection.4.3.5}%
+\contentsline {section}{\numberline {4\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}4}offline定位方法}{19}{section.4.4}%
+\contentsline {section}{\numberline {4\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}5}offline到online的迁移}{20}{section.4.5}%
+\contentsline {subsection}{\numberline {4\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}5\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}概念阐述}{20}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}5\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}online算法模型}{22}{subsection.4.5.2}%
+\contentsline {chapter}{\numberline {5}模型系统实现与实验分析}{23}{chapter.5}%
+\contentsline {section}{\numberline {5\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}开发环境与平台}{23}{section.5.1}%
+\contentsline {section}{\numberline {5\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}系统设计}{23}{section.5.2}%
+\contentsline {subsection}{\numberline {5\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}多模块设计}{23}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}界面与运行方式}{23}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3}实验与分析}{23}{section.5.3}%
+\contentsline {section}{\numberline {5\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}4}本章小结}{23}{section.5.4}%
+\contentsline {chapter}{\numberline {6}总结与展望}{25}{chapter.6}%
+\contentsline {section}{\numberline {6\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}工作总结}{25}{section.6.1}%
+\contentsline {section}{\numberline {6\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}前景展望}{25}{section.6.2}%
+\contentsline {chapter}{参考文献}{27}{chapter*.18}%
+\contentsline {chapter}{致\hspace {2em}谢}{29}{chapter*.19}%
