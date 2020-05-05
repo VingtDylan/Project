@@ -268,16 +268,69 @@ IMU
 	
 		\subsection{加速度传感器}
 			
-		
 		\subsection{陀螺仪}
 		
-		\subsection{重力传感器}
+		\subsection{方向传感器}
 		
 		\subsection{磁力计}
 	
-	\section{到达时间差(TDOA)}
+	\section{信号时延计算原理}
+	
+		智能手机的两个麦克风处于相同的环境下，因此采集到的的两路音频信号具有较强的相关性。当求解某一声源的位置时，声源信号到达两个麦克风的时延往往具有重要的作用。对于到达时延差(TDOA)的获取主要有两种方法。
+		
+		第一种方法依赖于信号到达时间(TOA)的测量，通过TOA的差值来求得。TOA对系统的时间同步要求就会很高，在信道传输特性相似的情况下，这种办法可以减少多径效应带来的误差。如图(\ref{fig: tdoa-diagram}),根据TOA可以得到关于TDOA的方程如下:
+		
+		\begin{align}
+			\sqrt{(x-x_1)^2+(y-y_1)^2} - \sqrt{(x-x_3)^2+(y-y_3)^2} &= c(t_1-t_3)\\
+			\sqrt{(x-x_2)^2+(y-y_2)^2} - \sqrt{(x-x_3)^2+(y-y_3)^2} &= c(t_2-t_3)
+		\end{align}
+		
+		由于依赖于TOA的值，微小的测量误差就会引起TOA较大的误差，进而可能导致TDOA的精度降低，因此在后续的实验中没有采用这种方式求解时延。
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=\textwidth]{tdoa_diagram.png} 
+			\caption{TDOA算法示意图}
+			\label{fig: tdoa-diagram}
+			%\vspace{0.8cm} % 用来调整和下方文字的间距
+		\end{figure}
+		
+		
+		第二种方法是将接受到的信号进行相关运算，从而得到TDOA的值。在实际应用中，系统往往很难做到严格的同步，因此常常用相关估计的方法求解TDOA的值，再进行后续的定位计算。在无线传感网中，这种方法对网络的要求比较低，因此更具有实际意义。
+		
+		广义互相关的基本思想是对两路信号$x_1(t)$和$x_2(t)$进行预滤波，然后再求互相关函数，其原理框架如图(\ref{fig: GCC})所示，公式表达为:
+		
+		\begin{equation}
+		\tau_{\text {delay }}=\underset{t \in \mathbb{R}}{\arg \max }((f \star g)(t))
+		\end{equation}
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=\textwidth]{GCC.png} 
+			\caption{互相关函数求解时延流程}
+			\label{fig: GCC}
+			%\vspace{0.8cm} % 用来调整和下方文字的间距
+		\end{figure}	
+		
+		在利用线性卷积计算时，常常可以借助线性卷积的关系来实现利用频域FFT的方式计算互相关，这种方法将比传统的时域计算法极大的减少计算量。根据维纳辛钦定理:平稳信号的自相关函数与其功率谱密度互为傅里叶变换对，因此相对应的，利用频域下的功率的互功率谱可以计算时域的互相关函数。最后通过峰值检测器求解出时延。需要说明的是，麦克风采集的信号是离散的，因此时延可以看做是几个采样点数的差距，通过麦克风的采样率，我们将可以把计算的采样点数的差距转换成时间的差值。
 	
 	\section{基于到达时间差的定位算法设计}
+	
+		上一节简要描述了利用互相关方法求解时延的方法，这一小节将会描述利用求解出的TDOA进行后续的声源定位。
+		
+		\subsection{二维空间下的定位分析}
+		
+		我们首先从二维空间下进行定位分析。首先可以明确的是，根据到达时间差，结合声速($v_{sound}$)我们可以求解出声源到两个麦克风的距离差($\delta d$)，因此在二维空间下，相对于手机中心和手机坐标系，如图(\ref{fig: 2D_hyperbola})所示，我们可以得到一个以智能手机麦克风节点为焦点的双曲线，而声源则在其中的某一支曲线上。同理，当我们移动手机至别的位置，那么就又可以得到一支曲线，如图(\ref{fig: 2D_hyperbola})而两个曲线的交点就是声源的所在位置。
+		
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=\textwidth]{2D_hyperbola.png} 
+			\caption{2维双曲线定位}
+			\label{fig: 2D_hyperbola}
+			%\vspace{0.8cm} % 用来调整和下方文字的间距
+		\end{figure}		
+		
 	
 	\section{}
 	
@@ -451,16 +504,10 @@ IMU
 			\begin{equation}
 				\tau_{\text {delay }}=\underset{t \in \mathbb{R}}{\arg \max }((f \star g)(t))
 			\end{equation}
-			
-			\begin{figure}[H]
-				\centering
-				\includegraphics[width=\textwidth]{GCC.png} 
-				\caption{Priciple diagram of the generalized cross-correlation based time delay estimation}
-				\label{fig: GCC}
-				%\vspace{0.8cm} % 用来调整和下方文字的间距
-			\end{figure}	
+				
 			
 			需要注意的是，这里计算出的“时延”实际是两个信号相差的采样点数，但是，由于采样率为设定好的44100Hz,因此计算出相差的采样点数，经过转换就可以得到对应的时延，也就是所求的TDOA，后面我们用相差的采样点数代指TDOA，转换公式无需赘述。可以明确的是，当TDOA < 0时，声音先到达第二个麦克风，TDOA > 0 时，声音先到达第一个麦克风，TDOA = 0 时，声音同时到达。降至二维空间下，详情如图(\ref{fig: tdoa})所示。
+			
 			
 			\begin{figure}[H]
 				\centering
