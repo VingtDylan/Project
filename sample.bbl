@@ -54,6 +54,12 @@
   Overview}\bibmark{[EB/OL]}\@. \bibyear{2020} \bibcitedate{[2020/5/20]}\@.
   \newline\url{https://developer.android.com/guide/topics/sensors/sensors_overview.html}\@.
 
+\bibitem{Chan3DTDOA}
+\bibauthor{李招华，汪毓铎，邵青}\@. \bibtitle{基于Chan的TDOA
+  三维定位算法}\bibmark{[J]}\@. \bibjournal{现代电信科技}\@,
+  \bibyear{2014}\@, \bibvolume{44}\bibnumber{(11)}\thinspace{}\textnormal{:
+  }\bibpages{36\thinspace{}\textnormal{--}\thinspace{}40+4}\@.
+
 \bibitem{Normalized_frequency}
 \bibauthor{{Wikipedia contributors}}\@. \bibtitle{Normalized
   frequency}\bibmark{[EB/OL]}\@. \bibpublisher{Wikipedia, The Free
