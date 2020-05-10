@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 \providecommand{\bibauthor}[1]{#1}
 \providecommand{\bibeditor}[1]{#1}
 \providecommand{\bibtranslator}[1]{#1}
@@ -69,9 +69,23 @@
 
 \bibitem{Moving_average}
 \bibauthor{{Wikipedia contributors}}\@. \bibtitle{Moving
-  averagey}\bibmark{[EB/OL]}\@. \bibpublisher{Wikipedia, The Free
+  average}\bibmark{[EB/OL]}\@. \bibpublisher{Wikipedia, The Free
   Encyclopedia}\@, \bibyear{2020} \bibmodifydate{(2020/2/19)}
   \bibcitedate{[2020/5/20]}\@.
-  \newline\url{https://en.wikipedia.org/wiki/Moving_averag}\@.
+  \newline\url{https://en.wikipedia.org/wiki/Moving_average}\@.
+
+\bibitem{Window_function}
+\bibauthor{{Wikipedia contributors}}\@. \bibtitle{Window
+  function}\bibmark{[EB/OL]}\@. \bibpublisher{Wikipedia, The Free
+  Encyclopedia}\@, \bibyear{2020} \bibmodifydate{(2020/4/18)}
+  \bibcitedate{[2020/5/20]}\@.
+  \newline\url{https://en.wikipedia.org/wiki/Window_function}\@.
+
+\bibitem{Endpoint_detection}
+\bibauthor{肖述才，王作英}\@.
+  \bibtitle{端点检测中的一种新的对数能量特征}\bibmark{[J]}\@.
+  \bibjournal{电声技术}\@, \@,
+  \bibvolume{2004}\bibnumber{(6)}\thinspace{}\textnormal{:
+  }\bibpages{37\thinspace{}\textnormal{--}\thinspace{}41}\@.
 
 \end{thebibliography}
