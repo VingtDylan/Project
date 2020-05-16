@@ -7,45 +7,45 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: sample.bib
 Warning--Require year: Endpoint_detection
-You've used 10 entries,
+You've used 14 entries,
             3107 wiz_defined-function locations,
-            773 strings with 7382 characters,
-and the built_in function-call counts, 10227 in all, are:
-= -- 1049
-> -- 24
-< -- 58
-+ -- 890
-- -- 65
-* -- 407
-:= -- 1180
+            798 strings with 7811 characters,
+and the built_in function-call counts, 15583 in all, are:
+= -- 1607
+> -- 36
+< -- 86
++ -- 1341
+- -- 106
+* -- 578
+:= -- 1769
 add.period$ -- 0
-call.type$ -- 10
-change.case$ -- 28
+call.type$ -- 14
+change.case$ -- 44
 chr.to.int$ -- 0
-cite$ -- 11
-duplicate$ -- 1291
-empty$ -- 371
-format.name$ -- 56
-if$ -- 2665
+cite$ -- 15
+duplicate$ -- 2009
+empty$ -- 590
+format.name$ -- 88
+if$ -- 4087
 int.to.chr$ -- 0
-int.to.str$ -- 10
+int.to.str$ -- 14
 missing$ -- 0
-newline$ -- 57
-num.names$ -- 10
-pop$ -- 123
+newline$ -- 69
+num.names$ -- 14
+pop$ -- 204
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 111
+skip$ -- 174
 stack$ -- 0
-substring$ -- 1095
-swap$ -- 408
+substring$ -- 1693
+swap$ -- 598
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 127
-width$ -- 12
-write$ -- 167
+while$ -- 206
+width$ -- 16
+write$ -- 223
 (There was 1 warning)

@@ -37,6 +37,32 @@
   \bibcitedate{[2020/5/20]}\@.
   \newline\url{https://en.wikipedia.org/wiki/Global_Positioning_System}\@.
 
+\bibitem{xiedi}
+\bibauthor{谢地\@, 鲁照权\@, 丁浩峰, et~al}\@.
+  \bibtitle{基于超声波测距的高精度室内定位系统}\bibmark{[J]}\@.
+  \bibjournal{传感器与微系统}\@, \bibyear{2019}\bibnumber{(10)}\@.
+
+\bibitem{qiaoxin}
+\bibauthor{乔鑫\@, 李晓梅\@, 肖岱云}\@.
+  \bibtitle{基于超声波测距的室内定位设计}\bibmark{[J]}\@.
+  \bibjournal{电子设计工程}\@, \bibyear{2019}\@,
+  \bibvolume{27}\bibnumber{(22)}\thinspace{}\textnormal{:
+  }\bibpages{102\thinspace{}\textnormal{--}\thinspace{}105}\@.
+
+\bibitem{xukunyu}
+\bibauthor{徐昆毓}\@.
+  \bibtitle{基于超声技术的室内定位设计}\bibmark{[J]}\@.
+  \bibjournal{技术与市场}\@, \bibyear{2019}\@,
+  \bibvolume{026}\bibnumber{(009)}\thinspace{}\textnormal{:
+  }\bibpages{10\thinspace{}\textnormal{--}\thinspace{}12}\@.
+
+\bibitem{zhaoyuwei}
+\bibauthor{赵予玮}\@.
+  \bibtitle{基于RFID及超声波的室内定位算法}\bibmark{[J]}\@.
+  \bibjournal{物联网技术}\@, \bibyear{2019}\@,
+  \bibvolume{009}\bibnumber{(006)}\thinspace{}\textnormal{:
+  }\bibpages{12\thinspace{}\textnormal{--}\thinspace{}13}\@.
+
 \bibitem{VSkin}
 \bibauthor{KE S\@, TING Z\@, WEI W, et~al}\@. \bibtitle{VSkin: Sensing Touch
   Gestures on Surfaces of Mobile Devices Using Acoustic
