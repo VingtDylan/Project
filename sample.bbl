@@ -37,6 +37,13 @@
   \bibcitedate{[2020/5/20]}\@.
   \newline\url{https://en.wikipedia.org/wiki/Global_Positioning_System}\@.
 
+\bibitem{Sniper}
+\bibauthor{吴新捷\@, 郗晓田\@, 游林儒}\@.
+  \bibtitle{声探测技术在反狙击系统中的应用}\bibmark{[J]}\@.
+  \bibjournal{现代电子技术}\@,
+  \bibyear{2009}\bibnumber{(01)}\thinspace{}\textnormal{:
+  }\bibpages{12\thinspace{}\textnormal{--}\thinspace{}14+18}\@.
+
 \bibitem{xiedi}
 \bibauthor{谢地\@, 鲁照权\@, 丁浩峰, et~al}\@.
   \bibtitle{基于超声波测距的高精度室内定位系统}\bibmark{[J]}\@.
@@ -80,11 +87,24 @@
   Overview}\bibmark{[EB/OL]}\@. \bibyear{2020} \bibcitedate{[2020/5/20]}\@.
   \newline\url{https://developer.android.com/guide/topics/sensors/sensors_overview.html}\@.
 
+\bibitem{houanlu}
+\bibauthor{侯宏录}\@.
+  \bibtitle{利用机载加速度计测量飞机起飞着陆轨迹}\bibmark{[J]}\@.
+  \bibjournal{国外试飞}\@,
+  \bibyear{1994}\bibnumber{(3)}\thinspace{}\textnormal{:
+  }\bibpages{14\thinspace{}\textnormal{--}\thinspace{}20}\@.
+
 \bibitem{Chan3DTDOA}
 \bibauthor{李招华，汪毓铎，邵青}\@. \bibtitle{基于Chan的TDOA
   三维定位算法}\bibmark{[J]}\@. \bibjournal{现代电信科技}\@,
   \bibyear{2014}\@, \bibvolume{44}\bibnumber{(11)}\thinspace{}\textnormal{:
   }\bibpages{36\thinspace{}\textnormal{--}\thinspace{}40+4}\@.
+
+\bibitem{zhouxin}
+\bibauthor{周鑫}\@.
+  \bibtitle{基于双麦克风手机的声源定位研究}\bibmark{[D]}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{:
+  }\bibschool{大连理工大学}\@, \bibyear{2019}\@.
 
 \bibitem{Normalized_frequency}
 \bibauthor{{Wikipedia contributors}}\@. \bibtitle{Normalized
