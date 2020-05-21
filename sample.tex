@@ -25,11 +25,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 设置论文的英文封面
 % 论文的英文标题
-\englishtitle{IMU}
+\englishtitle{Indoor positioning system based on ultrasound and smart phone}
 % 论文作者姓名的拼音
 \englishauthor{Yonghu Chen}
 % 导师姓名职称的英文
-\englishsupervisor{Professor Lei Xie}
+\englishsupervisor{Associate Professor Lei Xie}
 % 论文作者所在院系的英文名称
 \englishdepartment{School of Computer Science}
 % 论文作者所在学校或机构的英文名称。此属性可选，默认值为``Nanjing University''。
@@ -43,7 +43,7 @@
 % 设置论文的页眉页脚
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-%\lhead{\bfseries 141180092 }
+\lhead{\bfseries 161240005 }
 \chead{毕业论文}
 \rhead{陈勇虎}
 %\lfoot{From: K. Grant}
@@ -52,6 +52,8 @@
 \renewcommand{\headrulewidth}{0.4pt}
 %\renewcommand{\footrulewidth}{0.4pt}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%English algorithm
 %\makeatletter
 %\newenvironment{breakablealgorithm}
 %{% \begin{breakablealgorithm}
@@ -99,10 +101,11 @@
 % 制作中文封面
 \maketitle
 % 制作英文封面
-% \makeenglishtitle
+\makeenglishtitle
 % 毕业论文过程管理四页表
 %\controlpage %可以将word文件交给老师签字后扫描转成pdf，然后命名为controlpage.pdf
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 论文的中文摘要
 \begin{abstract}
 	
@@ -131,15 +134,15 @@
 	
 	With the popularization and use of the global positioning system, people are pursuing higher standards in positioning accuracy, especially in the demand for indoor positioning problems.In daily life, the search for lost items indoors is also a disturbing problem,so the indoor positioning problems has very practical application requirements.
 		
-	Under the development trend of wireless sensor networks, scientific researchers are also deepening their research on sound waves. Because of its anti-interference and other advantages, ultrasound has made more and more positioning systems using it as a carrier, and its accuracy is also constantly improving.At the same time, the development of hardware and software technology has brought about the vigorous development of smart devices. The emergence of dual-mircophone smart phones and the enrichment of sensors have also brought more possibilities for the application of mobile phones.This article combines a common smartphone at present, and puts forward a solution for positioning indoors using sound waves and smartphones. Firstly, the related principles involved are analyzed and elaborated, and the mathematical model of the positioning algorithm is constructed. Then, a complete positioning scheme using the dual-mircophone mobile phone and its integrated sensors is given. Two methods of offline calculation and online guidance are proposed, and finally implemented on the Android system.
+	Under the development trend of wireless sensor networks, scientific researchers are also deepening their research on acoustic waves. Because of its anti-interference and other advantages, ultrasound has made more and more positioning systems using it as a carrier, and its accuracy is also constantly improving.At the same time, the development of hardware and software technology has brought about the vigorous development of smart devices. The emergence of dual-mircophone smart phones and the enrichment of sensors have also brought more possibilities for the application of mobile phones.This article combines a common smartphone at present, and puts forward a solution for positioning indoors using acoustic waves and smartphones. Firstly, the related principles involved are analyzed and elaborated, and the mathematical model of the positioning algorithm is constructed. Then, a complete positioning scheme using the dual-mircophone mobile phone and its integrated sensors is given. Two methods of offline calculation and online guidance are proposed, and finally implemented on the Android system.
 
 	The main contribution in this paper are as follows: 
 	
-	1.We explain and analyze the principle of arrival delay difference calculation, introduce the sensors of dual-mircophon smartphones and its integrated sensors, and propose a data processing method for the model.
+	1.We explain and analyze the principle of arrival delay difference calculation, introduce the sensors of dual-mircophone smartphones and its integrated sensors, and propose a data processing method for the model.
 	
-	2.We present an offline calculation solution and an online guidance solution using a dual-microphone smartphone assisted by sound waves for indoor positioning, explain the details of its data processing are explained in detail, and propose the idea of dimensionality reduction guidance to lay the foundation for data visualization.
+	2.We present an offline calculation solution and an online guidance solution using a dual-microphone smartphone assisted by acoustic waves for indoor positioning, explain the details of its data processing in detail, and propose the idea of dimensionality reduction guidance to lay the foundation for data visualization.
 	
-	3.We systematically design and implement of the positioning system based on the above scheme, summarize and test its function and accuracy. In a set of actual experiments, the offline positioning component error is (1.6671cm, 1.9620cm, 1.6666cm), the online guidance angle error is 1.7877 °, and finnally we prospect the follow-up work.
+	3.We systematically design and implement the positioning system based on the above scheme, summarize and test its function and accuracy. In a set of actual experiments, the offline positioning component error is (1.6671cm, 1.9620cm, 1.6666cm), the online guidance angle error is 1.7877 °, and finnally we prospect the follow-up work.
 
 % 英文关键词。关键词之间用英文半角逗号隔开，末尾无符号。
 \englishkeywords{Acoustic source localization, Smart phone, Dual-microphone, Offline calculation, Online guidance}
@@ -166,11 +169,11 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 生成插图清单。如无需插图清单则可注释掉下述语句。
-%\listoffigures
+\listoffigures
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 生成附表清单。如无需附表清单则可注释掉下述语句。
-%\listoftables
+\listoftables
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 开始正文部分
@@ -247,7 +250,7 @@
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[height=0.35\textheight,width=0.3\textwidth]{samsung-dual-microphone.png} 
+		\includegraphics[width=.3\textwidth]{samsung-dual-microphone.png} 
 		\caption{双麦手机，以三星S5手机为例}
 		\label{fig: samsung-dual-microphone}
 		%\vspace{0.8cm} % 用来调整和下方文字的间距
@@ -328,7 +331,7 @@
 		
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=\textwidth]{tdoa_diagram.png} 
+			\includegraphics[width=0.7\textwidth]{tdoa_diagram.png} 
 			\caption{TDOA算法示意图}
 			\label{fig: tdoa-diagram}
 			%\vspace{0.8cm} % 用来调整和下方文字的间距
@@ -345,7 +348,7 @@
 		
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=\textwidth]{GCC.png} 
+			\includegraphics[width=.95\textwidth]{GCC.png} 
 			\caption{互相关函数求解时延流程}
 			\label{fig: GCC}
 			%\vspace{0.8cm} % 用来调整和下方文字的间距
@@ -370,7 +373,7 @@
 		
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.7\textwidth]{2D_hyperbola.png} 
+			\includegraphics[width=0.8\textwidth]{2D_hyperbola.png} 
 			\caption{2维双曲线定位}
 			\label{fig: 2D_hyperbola}
 			%\vspace{0.8cm} % 用来调整和下方文字的间距
@@ -389,7 +392,7 @@
 		
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.5\textwidth]{3D-Hyperboloid.png} 
+			\includegraphics[width=0.7\textwidth]{3D-Hyperboloid.png} 
 			\caption{3维双曲面定位}
 			\label{fig: 3D-Hyperboloid}
 			%\vspace{0.8cm} % 用来调整和下方文字的间距
@@ -421,7 +424,7 @@
 		
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.5\textwidth]{3D-Hyperboloid2.png} 
+			\includegraphics[width=0.7\textwidth]{3D-Hyperboloid2.png} 
 			\caption{3维结点布置示意}
 			\label{fig: 3D-Hyperboloid2}
 			%\vspace{0.8cm} % 用来调整和下方文字的间距
@@ -543,7 +546,7 @@
 		
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.5\textwidth]{2D_guide.png} 
+			\includegraphics[width=0.7\textwidth]{2D_guide.png} 
 			\caption{2维空间指引}
 			\label{fig: 2D_guide}
 			%\vspace{0.8cm} % 用来调整和下方文字的间距
@@ -576,7 +579,7 @@
 		
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.7\textwidth]{dual-microphone-data.png} 
+			\includegraphics[width=\textwidth]{dual-microphone-data.png} 
 			\caption{双麦克风信号}
 			\label{fig: dual-microphone-data}
 			%\vspace{0.8cm} % 用来调整和下方文字的间距
@@ -584,7 +587,7 @@
 	
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.7\textwidth]{dual-microphone-data1.png} 
+			\includegraphics[width=\textwidth]{dual-microphone-data1.png} 
 			\caption{双麦克风信号取样}
 			\label{fig: dual-microphone-data1}
 			%\vspace{0.8cm} % 用来调整和下方文字的间距
@@ -623,7 +626,7 @@
 		
 		\begin{figure}[H]
 			\centering
-			\includegraphics[scale=0.6]{sound-data.png} 
+			\includegraphics[width = \textwidth]{sound-data.png} 
 			\caption{数据存储方式}
 			\label{fig: sound-data}
 			%\vspace{0.8cm} % 用来调整和下方文字的间距
@@ -637,18 +640,18 @@
 			
 			由于信号采集中也会含有噪声成分，这对我们声源定位无疑会造成很大的影响，因此我们应该去除非声源发声的成分，提高声源的成分。常见的去噪方式就是使用滤波器，这里我们使用带通滤波器，降低环境中噪声的干扰。在MATLAB通过filter,designfilter函数我们很容易实现我们需要的功能，在后续的在线算法处理流程中，因为程序运行在Java平台上，所以Android系统方面可以通过使用dsp-collection这一个jar包来满足我们需要的功能。
 			
-			例如当我们的声源频率范围在2000Hz-2700Hz时，那么在除噪的过程中，我们就需要通过一个带通滤波器，减益非该频率范围的成分。如图(\ref{fig: filter-data})所示，横纵坐标信息同图(\ref{fig: dual-microphone-data})。通过滤波，不在制定频率范围的数据被大大减益，从而降低环境噪声对实验结果的影响。
+			例如当我们的声源频率范围在2000Hz-2700Hz时，那么在除噪的过程中，我们就需要通过一个带通滤波器，减益非该频率范围的成分。在滤波器阶数方面，对于室内环境噪声，采用6阶滤波器已经可以满足需求。如图(\ref{fig: filter-data})所示，横纵坐标信息同图(\ref{fig: dual-microphone-data})。通过滤波器的数据滤波，频率不在指定频率范围的音频信号，将会被大大减益，从而降低了环境噪声对后续信号时延的精度影响。
 			
 			\begin{figure}[H]
 				\centering
-				\begin{subfigure}{.45\textwidth}
+				\begin{subfigure}{\textwidth}
 					\centering
-					\includegraphics[width=0.9\textwidth]{data-unfiltered.png}
+					\includegraphics[width=\textwidth]{data-unfiltered.png}
 					\caption{信号除噪之前}
 				\end{subfigure}
-				\begin{subfigure}{.45\textwidth}
+				\begin{subfigure}{\textwidth}
 					\centering
-					\includegraphics[width=0.9\textwidth]{data-filtered.png}
+					\includegraphics[width=\textwidth]{data-filtered.png}
 					\caption{信号除噪以后}
 				\end{subfigure}
 				\caption{(a)信号除噪之前。(b)信号除噪以后。}
@@ -666,11 +669,11 @@
 			\end{aligned}
 			\end{equation}
 			
-			经过上述处理后，数据变得更加光滑，并且从图\ref{fig: data-outliers-removed}中已经可以隐约可见到达时间差(TDOA)的大致范围。这里，\text{LSD}为第一个麦克风降噪后是数据，\text{LSignaData}代表降噪后数据经过异常点去除操作后的数据。
+			经过上述处理后，数据变得更加光滑，并且从图\ref{fig: data-outliers-removed}中已经可以隐约可见到达时间差(TDOA)的大致范围。这里，\text{LSD}为第一个麦克风降噪后是数据，\text{LSignaData}代表降噪后数据经过异常点去除操作后的数据，声源主频率数据并不会因此受到影响。
 			
 			\begin{figure}[H]
 				\centering
-				\includegraphics[width=0.7\textwidth]{data-outliers-removed.png} 
+				\includegraphics[width=0.9\textwidth]{data-outliers-removed.png} 
 				\caption{异常点移除后的数据}
 				\label{fig: data-outliers-removed}
 				%\vspace{0.8cm} % 用来调整和下方文字的间距
@@ -682,7 +685,7 @@
 					
 			\begin{figure}[H]
 				\centering
-				\includegraphics[width=0.7\textwidth]{framing.png} 
+				\includegraphics[width=0.8\textwidth]{framing.png} 
 				\caption{数据分帧}
 				\label{fig: framing}
 				%\vspace{0.8cm} % 用来调整和下方文字的间距
@@ -724,7 +727,7 @@
 			
 			\begin{figure}[H]
 				\centering
-				\includegraphics[width=0.7\textwidth]{tdoa.png} 
+				\includegraphics[width=0.8\textwidth]{tdoa.png} 
 				\caption{{\text{TDOA > 0, TDOA < 0, TDOA = 0}}}
 				\label{fig: tdoa}
 				%\vspace{0.8cm} % 用来调整和下方文字的间距
@@ -776,7 +779,7 @@
 		
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.7\textwidth]{indoor.png} 
+			\includegraphics[width=0.9\textwidth]{indoor.png} 
 			\caption{{室内环境}}
 			\label{fig: indoor}
 			%\vspace{0.8cm} % 用来调整和下方文字的间距
@@ -797,7 +800,7 @@
 			
 			\begin{figure}[H]
 				\centering
-				\includegraphics[width=0.7\textwidth]{3D-dimension-reduction.png} 
+				\includegraphics[width=0.65\textwidth]{3D-dimension-reduction.png} 
 				\caption{{3D降维指引}}
 				\label{fig: 3D-dimension-reduction}
 				%\vspace{0.8cm} % 用来调整和下方文字的间距
@@ -807,7 +810,7 @@
 			
 			\begin{figure}[H]
 				\centering
-				\includegraphics[width=0.7\textwidth]{3D-dimension-reduction2.png} 
+				\includegraphics[width=0.8\textwidth]{3D-dimension-reduction2.png} 
 				\caption{{手机状态改变}}
 				\label{fig: 3D-dimension-reduction2}
 				%\vspace{0.8cm} % 用来调整和下方文字的间距
@@ -841,7 +844,7 @@
 		
 			\begin{figure}[H]
 				\centering
-				\includegraphics[width=0.7\textwidth]{gyro.png} 
+				\includegraphics[width=\textwidth]{gyrohandled.png} 
 				\caption{{陀螺仪三轴数据}}
 				\label{fig: gyro}
 				%\vspace{0.8cm} % 用来调整和下方文字的间距
@@ -955,35 +958,36 @@
 				\caption{双麦智能手机的信号采集}
 				\label{alg: data-collecting}
 				\begin{algorithmic}[1]
-					\STATE {mAudioRecord.startRecording()}
+					%\STATE {mAudioRecord.startRecording()}
 					\STATE {//系统捕获环境中的音频数据} 
 					\WHILE{in recording}
 						\STATE {//数据帧读入音频数据} 
 						\STATE {read = mAudioRecord.read(mBuffer, 0, BUFFER\_SIZE)}
-						\IF {read <= 0}
-							\STATE {return false}
-						\ELSE
+						%\IF {read <= 0}
+						%	\STATE {return false}
+						%\ELSE
 							\STATE {//硬阈值初始判断}
 							\STATE { sum = accumulate()}
-							\STATE {//达到设定的阈值}
+							\STATE {//达到设定的threshold阈值}
 							\IF{sum > threshold * read}
-								\STATE {//两路信号分离}
-								\STATE {index = 0}
-								\FOR{$i=0$ to mBuffer.length/2}
-									\IF{i \% 2 == 0}
-										\STATE{System.arraycopy(mBuffer, i * 2, mBuffer1, 0, 2)}
-										\STATE{LY[index] = ((mBuffer1[0]\&0x000000FF) | (((int)mBuffer1[1])<<8))/ 32768.0}
-										\STATE{LYList.add(LY[index])]}
-										\STATE{index = i / 2}
-									\ELSE
-										\STATE{System.arraycopy(mBuffer, i * 2, mBuffer2, 0, 2)}
-										\STATE{RY[index] = ((mBuffer2[0]\&0x000000FF) | (((int)mBuffer2[1])<<8))/ 32768.0}
-										\STATE{RYList.add(RY[index])]}
-									\ENDIF
-								\ENDFOR
+								\STATE {两路信号分离}
+								\STATE {数据转为浮点类型并存储}
+								%\STATE {index = 0}
+								%\FOR{$i=0$ to mBuffer.length/2}
+								%	\IF{i \% 2 == 0}
+								%		\STATE{System.arraycopy(mBuffer, i * 2, mBuffer1, 0, 2)}
+								%		\STATE{LY[index] = ((mBuffer1[0]\&0x000000FF) | (((int)mBuffer1[1])<<8))/ 32768.0}
+								%		\STATE{LYList.add(LY[index])]}
+								%		\STATE{index = i / 2}
+								%	\ELSE
+								%		\STATE{System.arraycopy(mBuffer, i * 2, mBuffer2, 0, 2)}
+								%		\STATE{RY[index] = ((mBuffer2[0]\&0x000000FF) | (((int)mBuffer2[1])<<8))/ 32768.0}
+								%		\STATE{RYList.add(RY[index])]}
+								%	\ENDIF
+								%\ENDFOR
 							\ENDIF	
-							\STATE {//other code for further data-processing}			
-						\ENDIF
+							\STATE {other code for further data-processing}			
+						%\ENDIF
 					\ENDWHILE
 				\end{algorithmic}
 			\end{breakablealgorithm}
@@ -993,28 +997,32 @@
 			通过麦克风采集获取的数据，将要经过滤波等清洗后并分帧进行计算。其处理流程如伪代码\ref{alg: data-handler}所示。
 			
 			\begin{breakablealgorithm}
-				\caption{data-processing(数据处理功能)}
+				\caption{数据处理功能}
 				\label{alg: data-handler}
 				\begin{algorithmic}[]
-					\STATE {1: //数据清洗}
-						\STATE {\quad 1.1: //filter(dsp)滤波}
-							\STATE {\quad \quad LSignalData = filter(bpFilt,LY)}
-							\STATE {\quad \quad RSignalData = filter(bpFilt,RY)}
-						\STATE {\quad 1.2: //RemoveOutliers 异常点移除}
-							\STATE {\quad \quad LSD = RemoveOutliers(LSignalData,m)}
-							\STATE {\quad \quad RSD = RemoveOutliers(RSignalData,m);}
-					\STATE {2: //分帧加窗}
-						\STATE {\quad 2.1: LY\_enframe = my\_enframe(LSD, frameLen, overLoap, 'rect')}
-						\STATE {\quad 2.2: RY\_enframe = my\_enframe(RSD, frameLen, overLoap, 'rect')}
-					\STATE {3: //端点检测}
-						\STATE {\quad 3.1: [VSDst,VSDed] = myVSD(LSD,RSD,Unit,m)}
-						\STATE {\quad 3.2: VLSD = LSD(VSDst:VSDed)}
-						\STATE {\quad 3.3: VRSD = RSD(VSDst:VSDed)}
-					\STATE {4: //到达时间差计算}
-						\STATE {\quad 4.1: //状态检测}
-						\STATE {\quad 4.2: //调用自定义的Tdoa函数对两路信号进行计算}
+					\STATE {1: 数据清洗}
+						\STATE {\quad 1.1: filter(dsp)滤波}
+							%\STATE {\quad \quad LSignalData = filter(bpFilt,LY)}
+							%\STATE {\quad \quad RSignalData = filter(bpFilt,RY)}
+							\STATE {\quad \quad [LSignalData,RSignalData] = filter(bpFilt,LY,RY)}
+						\STATE {\quad 1.2: RemoveOutliers 异常点移除}
+							%\STATE {\quad \quad LSD = RemoveOutliers(LSignalData,m)}
+							%\STATE {\quad \quad RSD = RemoveOutliers(RSignalData,m)}
+							\STATE {\quad \quad [LSD,RSD] = RemoveOutliers(LSignalData,RSignalData,m)}
+					\STATE {2: 分帧加窗}	
+						\STATE {\quad 2.1: [LY\_enframe,RY\_enframe] = my\_enframe(LSD,RSD, frameLen, overLoap, 'rect')}
+						%\STATE {\quad 2.1: LY\_enframe = my\_enframe(LSD, frameLen, overLoap, 'rect')}
+						%\STATE {\quad 2.2: RY\_enframe = my\_enframe(RSD, frameLen, overLoap, 'rect')}
+					\STATE {3: 端点检测}
+					\STATE {\quad 3.1: [VLSD,VRSD] = myVSD(LSD,RSD,Unit,m)}
+						%\STATE {\quad 3.1: [VSDst,VSDed] = myVSD(LSD,RSD,Unit,m)}
+						%\STATE {\quad 3.2: VLSD = LSD(VSDst:VSDed)}
+						%\STATE {\quad 3.3: VRSD = RSD(VSDst:VSDed)}
+					\STATE {4: 到达时间差计算}
+						\STATE {\quad 4.1: 状态检测}
+						\STATE {\quad 4.2: 调用自定义的Tdoa函数对两路信号进行计算}
 						\STATE {\quad 4.3: [TDOA,Sign] = myTdoa(VLSD,VRSD,N,"True")}
-					\STATE {5: //方向角度计算与显示}
+					\STATE {5: 方向角度计算与显示}
 				\end{algorithmic}
 			\end{breakablealgorithm}
 			
@@ -1023,36 +1031,38 @@
 			通过注册和监听传感器，并实时获取传感器数据进行处理。其处理如伪代码(\ref{alg: sensor})所示。
 			
 			\begin{breakablealgorithm}
-				\caption{sensor-listering(传感器监听)}
+				\caption{传感器监听}
 				\label{alg: sensor}
 				\begin{algorithmic}[1]
-					\STATE {//传感器注册}
-					\STATE {//传感器管理器对象}
+					\STATE {//创建传感器管理器对象}
 					\STATE {mSensorManager = (SensorManager)getSystemService(SENSOR\_SERVICE)}
-					\STATE {//传感器对象}
-					\STATE {mGyroscope = mSensorManager.getDefaultSensor(GYROSCOPE...)}
-					\STATE {mAccelerometer = mSensorManager.getDefaultSensor(ACCELEROMETER...)}
-					\STATE {mMagneticField = mSensorManager.getDefaultSensor(MAGNETIC\_FIELD...)}
-					\STATE {//传感器监听器注册}
+					\STATE {//创建传感器对象}
+					\STATE {mGyroscope,mAccelerometer,mMagneticField = getSensor(...)}
+					%\STATE {mGyroscope = mSensorManager.getDefaultSensor(GYROSCOPE...)}
+					%\STATE {mAccelerometer = mSensorManager.getDefaultSensor(ACCELEROMETER...)}
+					%\STATE {mMagneticField = mSensorManager.getDefaultSensor(MAGNETIC\_FIELD...)}
+					\STATE {//创建传感器监听器对象，并重写监听方法}
 					\STATE {mSensorListener = new SensorEventListener()\{...\}}
-					\STATE {//监听器方法重写}
-					\STATE {\quad //陀螺仪数据}
-					\STATE {\quad gyroscopeValues = event.values}
-					\STATE {\quad \quad //设备动态监测}
-					\STATE {\quad \quad IsMove(gyroscopeValues)}
-					\STATE {\quad //加速计数据}
-					\STATE {\quad accelerometerValues = event.values}
-					\STATE {\quad //磁力计数据}
-					\STATE {\quad magneticFieldValues = event.values}
-					\STATE {//获取方向}
-					\STATE {\quad getRotationMatrix(rotation, null, accelerometerValues,magneticFieldValues)}
+					%\STATE {\quad //监听器方法重写}
+					\STATE {\quad 陀螺仪数据获取}
+					%\STATE {\quad gyroscopeValues = getGyroValue}
+					%\STATE {\quad gyroscopeValues = event.values}
+					\STATE {\quad //设备动态监测}
+					\STATE {\quad IsMove(gyroscopeValues)}
+					\STATE {\quad 加速计数据获取}
+					%\STATE {\quad accelerometerValues = event.values}
+					\STATE {\quad 磁力计数据获取}
+					%\STATE {\quad magneticFieldValues = event.values}
+					\STATE {//获取(计算)方向}
+					%\STATE {\quad getRotationMatrix(rotation, null, accelerometerValues,magneticFieldValues)}
 					\STATE {\quad getOrientation(rotation, orientation)}
 					\STATE {\quad //获取方向，并更新界面}
-					\STATE {\quad chaosCompassView.changeVal(orientation[0],degree)}
+					%\STATE {\quad chaosCompassView.changeVal(orientation[0],degree)}
 					\STATE {//传感器监听}
-					\STATE {mSensorManager.registerListener(mSensorListener, mGyroscope,...)}
-					\STATE {mSensorManager.registerListener(mSensorListener, mAccelerometer,...)}
-					\STATE {mSensorManager.registerListener(mSensorListener, mMagneticField,...)}
+					\STATE {registerListener(mGyroscope,mAccelerometer,mMagneticField)}
+					%\STATE {mSensorManager.registerListener(mSensorListener, mGyroscope,...)}
+					%\STATE {mSensorManager.registerListener(mSensorListener, mAccelerometer,...)}
+					%\STATE {mSensorManager.registerListener(mSensorListener, mMagneticField,...)}
 				\end{algorithmic}
 			\end{breakablealgorithm}
 			
@@ -1078,7 +1088,7 @@
 			
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=.7\textwidth]{work12.png}
+			\includegraphics[width=\textwidth]{work12handled.png}
 			\caption{底层原始数据部分采样}
 			\label{fig: work12}
 			%\vspace{0.8cm} % 用来调整和下方文字的间距
@@ -1088,7 +1098,7 @@
 		
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=.7\textwidth]{work13.png}
+			\includegraphics[width=\textwidth]{work13handled.png}
 			\caption{滤波除噪后数据采样}
 			\label{fig: work13}
 			%\vspace{0.8cm} % 用来调整和下方文字的间距
@@ -1097,7 +1107,7 @@
 	
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=.7\textwidth]{work14.png}
+			\includegraphics[width=\textwidth]{work14handled.png}
 			\caption{异常点移除数据采样}
 			\label{fig: work14}
 			%\vspace{0.8cm} % 用来调整和下方文字的间距
