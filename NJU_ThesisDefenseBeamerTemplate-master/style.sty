@@ -1,0 +1,141 @@
+\usepackage{ctex}
+\usepackage{setspace}
+\usepackage[backend=biber,style=nature]{biblatex}
+\renewcommand*{\cite}[1]{\footnote[frame]{\fullcite{#1}}}
+% \usepackage[english]{babel}
+
+\renewcommand*{\songti}{\CJKfamily{zhsong}}
+\renewcommand*{\kaishu}{\CJKfamily{zhkai}}
+\renewcommand*{\heiti}{\CJKfamily{zhhei}}
+
+\setbeamerfont{title}{family=\zihao{3}\bfseries}
+\setbeamerfont{frametitle}{family=\zihao{-3}\bfseries}
+\setbeamerfont{block title}{family=\heiti}
+\setbeamerfont{author}{family=\zihao{5}\kaishu}
+\setbeamerfont{institute}{family=\zihao{5}\kaishu}
+\setbeamerfont{id}{family=\zihao{5}\kaishu}
+\setbeamerfont{supervisor}{family=\zihao{5}\kaishu}
+\setbeamerfont{date}{family=\zihao{5}\kaishu}
+\setbeamerfont{caption}{family=\zihao{-5}\kaishu}
+\setbeamerfont{footnote}{family=\zihao{-6}\kaishu}
+\setbeamerfont{section in toc}{family=\zihao{5}\heiti}
+\setbeamerfont{subsection in toc}{family=\zihao{-5}\songti}
+\setbeamerfont{section number projected}{family=\usebeamerfont{section in toc}}
+\setbeamerfont{subsection number projected}{family=\usebeamerfont{subsection in toc}}
+\setbeamerfont{alerted text}{family=\heiti}
+
+\definecolor{njuPurple}{RGB}{110,15,109}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{block body}{bg=normal text.bg!90!black}
+\setbeamercolor{block title}{bg=njuPurple, fg=white}
+\setbeamercolor{frametitle}{fg=njuPurple}
+\setbeamercolor{title}{bg=njuPurple, fg=white}
+\setbeamercolor{structure}{fg=njuPurple}
+\setbeamercolor{footnote}{fg=black, bg=black}
+\setbeamercolor{section number projected}{bg=njuPurple,fg=white}
+\setbeamercolor{subsection number projected}{bg=njuPurple,fg=white}
+\setbeamercolor{alerted text}{fg=red}
+
+
+\setbeamertemplate{footline}[page number]{}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamertemplate{block title}[rounded]
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[subsections numbered]
+\setbeamertemplate{title page}
+{
+	\vfill
+	\vskip-10pt\hskip-10pt
+	\includegraphics[width=0.25\paperwidth]{logo/NJU_LogoAndName.jpg}\\
+	\vskip40pt
+	\hfill
+  	\begin{beamercolorbox}[rounded=true,wd=0.75\paperwidth,shadow=true]{title}
+   		 \centering\usebeamerfont{title}\inserttitle
+	\end{beamercolorbox}
+	\hfill\hfill
+	\vskip25pt
+	\hfill\usebeamerfont{author}姓名: \insertauthor\quad\quad\usebeamerfont{id}学号: \insertid\hfill\hfill
+	\vskip10pt
+	\hfill\usebeamerfont{institute}院系: \insertinstitute\quad\quad\usebeamerfont{supervisor}指导老师: \insertsupervisor\hfill\hfill
+	\vskip10pt
+	\hfill\usebeamerfont{date}答辩日期: \insertdate\hfill\hfill
+	\vfill
+}
+\renewcommand*{\thanks}
+{
+	\vfill
+	\vskip-10pt\hskip-10pt
+	\includegraphics[width=0.25\paperwidth]{logo/NJU_LogoAndName.jpg}\\
+	\vskip40pt
+	\hfill
+  	\begin{beamercolorbox}[rounded=true,wd=0.6\paperwidth,shadow=true]{title}
+   		 \centering\usebeamerfont{title}谢谢！
+	\end{beamercolorbox}
+	\hfill\hfill
+	\vskip25pt
+	\hfill\usebeamerfont{author}姓名: \insertauthor\quad\quad\usebeamerfont{id}学号: \insertid\hfill\hfill
+	\vskip10pt
+	\hfill\usebeamerfont{institute}院系: \insertinstitute\quad\quad\usebeamerfont{supervisor}指导老师: \insertsupervisor\hfill\hfill
+	\vskip10pt
+	\hfill\usebeamerfont{date}答辩日期: \insertdate\hfill\hfill
+	\vfill
+}
+\setbeamertemplate{frametitle}
+{
+	\begin{spacing}{1.0}
+    \vskip10pt\hskip-10pt
+    \includegraphics[height=25pt]{logo/NJU_Logo.jpg}
+    \vskip-28pt\hskip20pt
+    \usebeamerfont{frametitle}\usebeamercolor{frametitle}\insertframetitle
+    \vskip-10pt\noindent\hskip15pt\rule{0.8\paperwidth}{1pt}
+    \vskip-5pt
+    \end{spacing}
+}
+\setbeamertemplate{headline}{}
+
+
+\newcommand{\id}[1]{\newcommand{\insertid}{#1}}
+\newcommand{\supervisor}[1]{\newcommand{\insertsupervisor}{#1}}
+\newcommand*{\makecontents}
+{
+	\begin{spacing}{1.5}
+	\hfill
+	\parbox[t]{.95\textwidth}
+	{
+		\begin{minipage}[c][0.75\textheight]{\textwidth}
+			\tableofcontents
+		\end{minipage}
+	}
+	\end{spacing}
+}
+\AtBeginSection[]
+{
+	\begin{frame}
+		\frametitle{目录}
+		\begin{spacing}{1.5}
+			\hfill
+			\parbox[t]{.95\textwidth}
+			{
+				\begin{minipage}[c][0.75\textheight]{\textwidth}
+					\tableofcontents[currentsection]
+				\end{minipage}
+			}
+		\end{spacing}
+	\end{frame}
+}
+\AtBeginSubsection[]
+{
+	\begin{frame}
+		\frametitle{目录}
+		\begin{spacing}{1.5}
+			\hfill
+			\parbox[t]{.95\textwidth}
+			{
+				\begin{minipage}[c][0.75\textheight]{\textwidth}
+					\tableofcontents[currentsection,currentsubsection]
+				\end{minipage}
+			}
+		\end{spacing}
+	\end{frame}
+}

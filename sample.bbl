@@ -37,12 +37,24 @@
   \bibcitedate{[2020/5/20]}\@.
   \newline\url{https://en.wikipedia.org/wiki/Global_Positioning_System}\@.
 
+\bibitem{kekun}
+\bibauthor{柯昆}\@. \bibtitle{声源定位技术研究}\bibmark{[D]}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{:
+  }\bibschool{西安电子科技大学}\@, \@.
+
 \bibitem{Sniper}
 \bibauthor{吴新捷\@, 郗晓田\@, 游林儒}\@.
   \bibtitle{声探测技术在反狙击系统中的应用}\bibmark{[J]}\@.
   \bibjournal{现代电子技术}\@,
   \bibyear{2009}\bibnumber{(01)}\thinspace{}\textnormal{:
   }\bibpages{12\thinspace{}\textnormal{--}\thinspace{}14+18}\@.
+
+\bibitem{wangfudong}
+\bibauthor{王富东}\@.
+  \bibtitle{超声波定位系统的原理与应用}\bibmark{[J]}\@.
+  \bibjournal{自动化与仪表}\@,
+  \bibyear{1998}\bibnumber{(3)}\thinspace{}\textnormal{:
+  }\bibpages{15\thinspace{}\textnormal{--}\thinspace{}17}\@.
 
 \bibitem{xiedi}
 \bibauthor{谢地\@, 鲁照权\@, 丁浩峰, et~al}\@.
@@ -70,6 +82,13 @@
   \bibvolume{009}\bibnumber{(006)}\thinspace{}\textnormal{:
   }\bibpages{12\thinspace{}\textnormal{--}\thinspace{}13}\@.
 
+\bibitem{cuiweiwei}
+\bibauthor{崔玮玮\@, 曹志刚\@, 魏建强}\@.
+  \bibtitle{声源定位中的时延估计技术}\bibmark{[J]}\@.
+  \bibjournal{数据采集与处理}\@,
+  \bibyear{2007}\bibnumber{(1)}\thinspace{}\textnormal{:
+  }\bibpages{94\thinspace{}\textnormal{--}\thinspace{}103}\@.
+
 \bibitem{VSkin}
 \bibauthor{KE S\@, TING Z\@, WEI W, et~al}\@. \bibtitle{VSkin: Sensing Touch
   Gestures on Surfaces of Mobile Devices Using Acoustic
@@ -82,6 +101,12 @@
   \bibvolume{2003}\bibnumber{(4)}\thinspace{}\textnormal{:
   }\bibpages{338\thinspace{}\textnormal{--}\thinspace{}447}\@.
 
+\bibitem{snoop}
+\bibauthor{JIAN L\@, YAN W\@, KAR G, et~al}\@. \bibtitle{Snooping Keystrokes
+  with mm-level Audio Ranging on a Single Phone}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{the 21st Annual International Conference}\@.
+  \bibyear{2015}\@.
+
 \bibitem{Google_Sensor}
 \bibauthor{{Google Inc}}\@. \bibtitle{Android Developers Sensors
   Overview}\bibmark{[EB/OL]}\@. \bibyear{2020} \bibcitedate{[2020/5/20]}\@.
@@ -93,6 +118,13 @@
   \bibjournal{国外试飞}\@,
   \bibyear{1994}\bibnumber{(3)}\thinspace{}\textnormal{:
   }\bibpages{14\thinspace{}\textnormal{--}\thinspace{}20}\@.
+
+\bibitem{jibuqi}
+\bibauthor{宋浩然\@, 廖文帅\@, 赵一鸣}\@.
+  \bibtitle{基于加速度传感器ADXL330的高精度计步器}\bibmark{[J]}\@.
+  \bibjournal{传感技术学报}\@, \bibyear{2006}\@,
+  \bibvolume{19}\bibnumber{(4)}\thinspace{}\textnormal{:
+  }\bibpages{1005\thinspace{}\textnormal{--}\thinspace{}1008}\@.
 
 \bibitem{Chan3DTDOA}
 \bibauthor{李招华，汪毓铎，邵青}\@. \bibtitle{基于Chan的TDOA

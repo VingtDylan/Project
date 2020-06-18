@@ -1,0 +1,16 @@
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.xdv
+*.bcf
+*.nav
+*.xml
+*.snm
+.DS_Store
+logo/.DS_Store

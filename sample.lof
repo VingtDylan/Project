@@ -13,29 +13,33 @@
 \contentsline {figure}{\numberline {{2}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{8}}{\ignorespaces 3维结点布置示意\relax }}{12}{figure.caption.12}%
 \contentsline {figure}{\numberline {{2}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{9}}{\ignorespaces 2维空间指引\relax }}{15}{figure.caption.13}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{1}}{\ignorespaces 离线数据处理流程\relax }}{17}{figure.caption.14}%
-\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{2}}{\ignorespaces 双麦克风信号\relax }}{18}{figure.caption.15}%
-\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{3}}{\ignorespaces 双麦克风信号取样\relax }}{18}{figure.caption.16}%
-\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{4}}{\ignorespaces 华为手机录制性能\relax }}{19}{figure.caption.18}%
-\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{5}}{\ignorespaces 数据存储方式\relax }}{20}{figure.caption.19}%
-\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{6}}{\ignorespaces (a)信号除噪之前。(b)信号除噪以后。\relax }}{21}{figure.caption.20}%
-\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{7}}{\ignorespaces 异常点移除后的数据\relax }}{22}{figure.caption.21}%
-\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{8}}{\ignorespaces 数据分帧\relax }}{23}{figure.caption.22}%
-\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{9}}{\ignorespaces {\text {TDOA > 0, TDOA < 0, TDOA = 0}}\relax }}{25}{figure.caption.23}%
-\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{10}}{\ignorespaces {数据分段示意}\relax }}{26}{figure.caption.24}%
-\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{11}}{\ignorespaces {室内环境}\relax }}{28}{figure.caption.25}%
-\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{12}}{\ignorespaces {3D降维指引}\relax }}{29}{figure.caption.26}%
-\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{13}}{\ignorespaces {手机状态改变}\relax }}{30}{figure.caption.27}%
-\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{14}}{\ignorespaces {状态判别}\relax }}{31}{figure.caption.28}%
-\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{15}}{\ignorespaces {陀螺仪三轴数据}\relax }}{32}{figure.caption.29}%
+\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{1}}{\ignorespaces 坐标系转换\relax }}{17}{figure.caption.14}%
+\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{2}}{\ignorespaces 离线计算模型\relax }}{18}{figure.caption.15}%
+\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{3}}{\ignorespaces 在线指引模型\relax }}{18}{figure.caption.16}%
+\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{4}}{\ignorespaces 离线数据处理流程\relax }}{19}{figure.caption.17}%
+\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{5}}{\ignorespaces 双麦克风信号\relax }}{20}{figure.caption.18}%
+\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{6}}{\ignorespaces 双麦克风信号取样\relax }}{21}{figure.caption.19}%
+\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{7}}{\ignorespaces 华为手机录制性能\relax }}{22}{figure.caption.21}%
+\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{8}}{\ignorespaces 数据存储方式\relax }}{22}{figure.caption.22}%
+\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{9}}{\ignorespaces 信号除噪之前\relax }}{23}{figure.caption.23}%
+\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{10}}{\ignorespaces 信号除噪以后\relax }}{24}{figure.caption.24}%
+\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{11}}{\ignorespaces 异常点移除后的数据\relax }}{25}{figure.caption.25}%
+\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{12}}{\ignorespaces 数据分帧\relax }}{25}{figure.caption.26}%
+\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{13}}{\ignorespaces {\text {TDOA > 0, TDOA < 0, TDOA = 0}}\relax }}{27}{figure.caption.27}%
+\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{14}}{\ignorespaces {数据分段示意}\relax }}{28}{figure.caption.28}%
+\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{15}}{\ignorespaces {室内环境}\relax }}{31}{figure.caption.29}%
+\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{16}}{\ignorespaces {3D降维指引}\relax }}{32}{figure.caption.30}%
+\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{17}}{\ignorespaces {手机状态改变}\relax }}{33}{figure.caption.31}%
+\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{18}}{\ignorespaces {状态判别}\relax }}{34}{figure.caption.32}%
+\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{19}}{\ignorespaces {陀螺仪三轴数据}\relax }}{35}{figure.caption.33}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{1}}{\ignorespaces {系统流程和数据流简图}\relax }}{35}{figure.caption.30}%
-\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{2}}{\ignorespaces 发声app界面\relax }}{36}{figure.caption.31}%
-\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{3}}{\ignorespaces (a)离线采集数据界面，(b)在线指引界面\relax }}{36}{figure.caption.32}%
-\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{4}}{\ignorespaces 设备放置示意\relax }}{39}{figure.caption.33}%
-\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{5}}{\ignorespaces 底层原始数据部分采样\relax }}{40}{figure.caption.34}%
-\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{6}}{\ignorespaces 滤波除噪后数据采样\relax }}{41}{figure.caption.35}%
-\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{7}}{\ignorespaces 异常点移除数据采样\relax }}{41}{figure.caption.36}%
+\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{1}}{\ignorespaces {系统流程和数据流简图}\relax }}{38}{figure.caption.34}%
+\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{2}}{\ignorespaces 发声app界面\relax }}{39}{figure.caption.35}%
+\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{3}}{\ignorespaces (a)离线采集数据界面，(b)在线指引界面\relax }}{40}{figure.caption.36}%
+\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{4}}{\ignorespaces 设备放置示意\relax }}{43}{figure.caption.37}%
+\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{5}}{\ignorespaces 底层原始数据部分采样\relax }}{44}{figure.caption.38}%
+\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{6}}{\ignorespaces 滤波除噪后数据采样\relax }}{44}{figure.caption.39}%
+\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{7}}{\ignorespaces 异常点移除数据采样\relax }}{45}{figure.caption.40}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
