@@ -1,0 +1,43 @@
+
+offline
+│
+├─151.wav                          
+├─Chan3Model.m               汇总计算
+├─Chan3ModelDraw.m           绘图使用1
+├─DrawFilterData.m           绘图使用2
+├─DrawFilteredData.m         绘图使用3
+├─DrawOutliersData.m         绘图使用4
+├─DrawSampleData.m           绘图使用5
+├─myAS.m                     绘制频谱图
+├─myChan3.m                  Chan3D核心
+├─myEnframe.m                加窗
+├─myFilter.m                 滤波除噪
+├─myNormalize.m              标准化
+├─mySound.m                  
+├─myTdoa.m                   Tdoa计算核心    
+├─myVSD.m                    提取有效信号
+├─RemoveOutliers.m           移除异常点
+└─Tdoa.m                     求解TDOA
+        
+java\cn\edu\nju\cyh\Cricket    
+│
+├─Activity                     
+│   ├──CompassActivity.java---指引activity
+│   └──MainActivity.java------保存文件activity
+│
+├─Core -----------------------核心类                      
+│   ├──Complex.java          
+│   ├──Correlation.java
+│   ├──FFT.java
+│   ├──Filter.java
+│   └──Tdoa.java
+│
+├─Tools-----------------------工具类
+│   ├──ApplicationBuffer.java
+│   ├──PcmToWavUtil.java
+│   └──Util.java
+│
+└─UI--------------------------界面类
+   ├───BarUtils.java
+   ├───ChaosCompassView.java
+   └───MySurfaceView.java
